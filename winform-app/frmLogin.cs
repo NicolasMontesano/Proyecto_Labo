@@ -51,11 +51,33 @@ namespace winform_app
                 MessageBox.Show("Ingreso exitoso");
                 //redireccionar a la siguiente página
 
+                switch (usu.TipoUsuario)
+                {
+                    case 1: //admin
+                        //redirigir a pantalla de empresa
+                        break;
+                    case 2: //redirigir a pantalla de empresa
+                        break;
+                    case 3://redirigir a pantalla de empresa
+                        break;
+                    case 4:
+                        frmIngreso_Alumno frmIngreso = new frmIngreso_Alumno();
+                        this.Hide();
+                        frmIngreso.Show();
+                        break;
+
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error con el ingreso");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtContraseña.Clear();
+            txtUsuario.Clear();
         }
     }
 }
