@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.rutinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemRutina = new System.Windows.Forms.ToolStripMenuItem();
             this.actualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +44,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rutinaToolStripMenuItem,
+            this.itemRutina,
             this.asistenciaToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.pagosToolStripMenuItem});
@@ -54,25 +54,25 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // rutinaToolStripMenuItem
+            // itemRutina
             // 
-            this.rutinaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemRutina.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualToolStripMenuItem,
             this.historicoToolStripMenuItem});
-            this.rutinaToolStripMenuItem.Name = "rutinaToolStripMenuItem";
-            this.rutinaToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
-            this.rutinaToolStripMenuItem.Text = "Mis Rutinas";
+            this.itemRutina.Name = "itemRutina";
+            this.itemRutina.Size = new System.Drawing.Size(87, 21);
+            this.itemRutina.Text = "Mis Rutinas";
             // 
             // actualToolStripMenuItem
             // 
             this.actualToolStripMenuItem.Name = "actualToolStripMenuItem";
-            this.actualToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.actualToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.actualToolStripMenuItem.Text = "Actual";
             // 
             // historicoToolStripMenuItem
             // 
             this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.historicoToolStripMenuItem.Text = "Historico";
             // 
             // asistenciaToolStripMenuItem
@@ -135,7 +135,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem rutinaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemRutina;
         private System.Windows.Forms.ToolStripMenuItem actualToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asistenciaToolStripMenuItem;

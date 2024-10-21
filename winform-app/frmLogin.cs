@@ -22,27 +22,29 @@ namespace winform_app
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtUsuario.Text)) {
+            if (String.IsNullOrEmpty(txtUsuario.Text))
+            {
                 MessageBox.Show("El Usuario es requerido");
                 return;
             }
-            else if(String.IsNullOrEmpty(txtUsuario.Text)) {
+            else if (String.IsNullOrEmpty(txtUsuario.Text))
+            {
                 MessageBox.Show("La contraseña es requerida");
                 return;
             }
-            
+
             try
             {
                 UsuarioNegocio negocio = new UsuarioNegocio();
                 Usuario usu = negocio.Login(txtUsuario.Text, txtContraseña.Text);
 
-                if (usu == null) 
+                if (usu == null)
                 {
                     MessageBox.Show("Ocurrió un error con el ingreso");
                     return;
                 }
 
-                if(usu.Id == 0)
+                if (usu.Id == 0)
                 {
                     MessageBox.Show("Usuario inválido");
                     return;
@@ -51,21 +53,29 @@ namespace winform_app
                 MessageBox.Show("Ingreso exitoso");
                 //redireccionar a la siguiente página
 
-                switch (usu.TipoUsuario)
+                if (usu.TipoUsuario == 4)
                 {
-                    case 1: //admin
-                        //redirigir a pantalla de empresa
-                        break;
-                    case 2: //redirigir a pantalla de empresa
-                        break;
-                    case 3://redirigir a pantalla de empresa
-                        break;
-                    case 4:
-                        frmIngreso_Alumno frmIngreso = new frmIngreso_Alumno();
-                        this.Hide();
-                        frmIngreso.Show();
-                        break;
+                    AlumnoNegocio negAlumno = new AlumnoNegocio();
 
+                    Alumno alumno = negAlumno.ObtenerAlumnoxIdUsuario(usu.Id);
+
+                    frmIngreso_Alumno frmIngreso = new frmIngreso_Alumno(alumno);
+                    this.Hide();
+                    frmIngreso.Show();
+                }
+                else
+                {
+                    switch (usu.TipoUsuario)
+                    {
+                        case 1: //admin
+                            //redirigir a pantalla de empresa
+                            break;
+                        case 2:
+                            //redirigir a pantalla de empresa
+                            break;
+                        case 3://redirigir a pantalla de empresa
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
@@ -78,6 +88,11 @@ namespace winform_app
         {
             txtContraseña.Clear();
             txtUsuario.Clear();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
