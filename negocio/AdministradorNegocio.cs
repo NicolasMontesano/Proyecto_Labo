@@ -130,5 +130,26 @@ namespace negocio
                 throw ex;
             }
         }
+        //public void agregarRecepcionista(Recepcionista nuevo)
+        //{
+        //    AccesoDatos datos = new AccesoDatos();
+
+        //    try
+        //    {
+        //        datos.setearConsulta("Insert into Recepcionistas (Nombre,Apellido,FechaNacimiento,DNI,IdUsuario)values(" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @idTipo, @idDebilidad, @urlImagen)");
+        //        datos.setearParametro("@idTipo", nuevo.Tipo.Id);
+        //        datos.setearParametro("@idDebilidad", nuevo.Debilidad.Id);
+        //        datos.setearParametro("@urlImagen", nuevo.UrlImagen);
+        //        datos.ejecutarAccion();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        datos.cerrarConexion();
+        //    }
+        //}
     }
 }
