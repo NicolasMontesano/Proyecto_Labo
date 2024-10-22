@@ -68,10 +68,18 @@ namespace winform_app
                     switch (usu.TipoUsuario)
                     {
                         case 1: //admin
-                            //redirigir a pantalla de empresa
+
                             break;
-                        case 2:
-                            //redirigir a pantalla de empresa
+
+                        case 2: ///si es Profesor
+
+                            ProfesorNegocio profeNeg = new ProfesorNegocio();
+
+                            int profe = profeNeg.ObtenerProfexIdUsuario(usu.Id);
+
+                            frmPanel_Gestion ventGestion = new frmPanel_Gestion(profe);
+                            ventGestion.Show();
+
                             break;
                         case 3://redirigir a pantalla de empresa
                             break;
@@ -88,6 +96,7 @@ namespace winform_app
         {
             txtContraseña.Clear();
             txtUsuario.Clear();
+            Close();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

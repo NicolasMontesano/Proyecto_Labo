@@ -54,7 +54,7 @@
             this.tsmiIngresos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,56 +64,57 @@
             this.profesoresToolStripMenuItem,
             this.recepcionistasToolStripMenuItem});
             this.tsmiEmpleados.Name = "tsmiEmpleados";
-            this.tsmiEmpleados.Size = new System.Drawing.Size(85, 22);
+            this.tsmiEmpleados.Size = new System.Drawing.Size(77, 20);
             this.tsmiEmpleados.Text = "Empleados";
             // 
             // profesoresToolStripMenuItem
             // 
             this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
-            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.profesoresToolStripMenuItem.Text = "Profesores";
             // 
             // recepcionistasToolStripMenuItem
             // 
             this.recepcionistasToolStripMenuItem.Name = "recepcionistasToolStripMenuItem";
-            this.recepcionistasToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.recepcionistasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.recepcionistasToolStripMenuItem.Text = "Recepcionistas";
             // 
             // tsmiClientes
             // 
             this.tsmiClientes.Name = "tsmiClientes";
-            this.tsmiClientes.Size = new System.Drawing.Size(65, 22);
+            this.tsmiClientes.Size = new System.Drawing.Size(61, 20);
             this.tsmiClientes.Text = "Clientes";
+            this.tsmiClientes.Click += new System.EventHandler(this.tsmiClientes_Click);
             // 
             // tsmiDisciplinas
             // 
             this.tsmiDisciplinas.Name = "tsmiDisciplinas";
-            this.tsmiDisciplinas.Size = new System.Drawing.Size(81, 22);
+            this.tsmiDisciplinas.Size = new System.Drawing.Size(75, 20);
             this.tsmiDisciplinas.Text = "Disciplinas";
             // 
             // tsmiFacturas
             // 
             this.tsmiFacturas.Name = "tsmiFacturas";
-            this.tsmiFacturas.Size = new System.Drawing.Size(68, 22);
+            this.tsmiFacturas.Size = new System.Drawing.Size(63, 20);
             this.tsmiFacturas.Text = "Facturas";
             this.tsmiFacturas.Click += new System.EventHandler(this.vistasToolStripMenuItem_Click);
             // 
             // tsmiRutinas
             // 
             this.tsmiRutinas.Name = "tsmiRutinas";
-            this.tsmiRutinas.Size = new System.Drawing.Size(62, 22);
+            this.tsmiRutinas.Size = new System.Drawing.Size(58, 20);
             this.tsmiRutinas.Text = "Rutinas";
             // 
             // tsmiEjercicios
             // 
             this.tsmiEjercicios.Name = "tsmiEjercicios";
-            this.tsmiEjercicios.Size = new System.Drawing.Size(74, 22);
+            this.tsmiEjercicios.Size = new System.Drawing.Size(68, 20);
             this.tsmiEjercicios.Text = "Ejercicios";
             // 
             // tsmiIngresos
             // 
             this.tsmiIngresos.Name = "tsmiIngresos";
-            this.tsmiIngresos.Size = new System.Drawing.Size(70, 22);
+            this.tsmiIngresos.Size = new System.Drawing.Size(63, 20);
             this.tsmiIngresos.Text = "Ingresos";
             // 
             // frmPanel_Gestion

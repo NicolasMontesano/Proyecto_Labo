@@ -43,10 +43,18 @@ namespace winform_app
         private void frmPanel_Gestion_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void vistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void tsmiClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes ventCliente = new frmClientes();
+            ventCliente.ShowDialog();
 
         }
     }
