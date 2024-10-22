@@ -33,6 +33,7 @@ namespace negocio
                     alumno.Estado = (int)datos.Lector["Estado"];
 
                 }
+                datos.cerrarConexion();
 
                 return alumno;
             }
@@ -58,7 +59,7 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
+                    alumno.idAlumno = (long)datos.Lector["IdAlumno"];
                     alumno.Nombre = (string)datos.Lector["Nombre"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     //alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
@@ -84,12 +85,6 @@ namespace negocio
                 datos.cerrarConexion();
                     
                     return listaAl;
-            }
-            catch (InvalidCastException ex)
-            {
-                MessageBox.Show("Error al convertir un campo: " + ex.Message);
-                
-                throw;
             }
             catch (Exception ex)
             {

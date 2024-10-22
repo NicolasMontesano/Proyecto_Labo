@@ -75,9 +75,9 @@ namespace winform_app
 
                             ProfesorNegocio profeNeg = new ProfesorNegocio();
 
-                            int profe = profeNeg.ObtenerProfexIdUsuario(usu.Id);
+                            //int profe = profeNeg.ObtenerProfexIdUsuario(usu.Id);
 
-                            frmPanel_Gestion ventGestion = new frmPanel_Gestion(profe);
+                            frmPanel_Gestion ventGestion = new frmPanel_Gestion(usu.TipoUsuario);
                             ventGestion.Show();
 
                             break;

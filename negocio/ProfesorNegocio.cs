@@ -14,7 +14,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select IdProfesor, Nombre, Apellido, FechaNacimiento, DNI, IdUsuario from Profesores where idUsuario = @usu");
+                datos.setearConsulta("select IdEmpleado, Nombre, Apellido, FechaNacimiento, DNI, IdUsuario from Empleados where idUsuario = @usu");
                 datos.setearParametro("@usu", idUsuario);
                 datos.ejecutarLectura();
 
@@ -42,6 +42,8 @@ namespace negocio
         }
 
         
+
+
 
 
 
