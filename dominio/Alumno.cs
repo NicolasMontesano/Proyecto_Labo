@@ -14,7 +14,7 @@ namespace dominio
         public DateTime FechaNacimiento { get; set; }
         public string DNI { get; set; }
         public int IdUsuario { get; set; }
-        public decimal Creditos { get; set; }
+        public int Creditos { get; set; }
         public int Estado { get; set; }
     }
 }
