@@ -23,7 +23,7 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
+                    alumno.idAlumno = (long)datos.Lector["IdAlumno"];
                     alumno.Nombre = (string)datos.Lector["Usuario"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
@@ -55,14 +55,16 @@ namespace negocio
                 datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario,AL.Creditos, AL.Estado from Alumnos as AL inner Join Usuarios As U on U.Id = AL.IdUsuario inner join TipoUsuarios as TU On TU.Id = U.Tipo Where TU.Id=4");
                 datos.ejecutarLectura();
 
-                Alumno alumno = new Alumno();
-
                 while (datos.Lector.Read())
                 {
+
+                    Alumno alumno = new Alumno();
+
                     alumno.idAlumno = (long)datos.Lector["IdAlumno"];
                     alumno.Nombre = (string)datos.Lector["Nombre"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     //alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+
                     if (!Convert.IsDBNull(datos.Lector["FechaNacimiento"]))
                     {
                         alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
@@ -71,7 +73,9 @@ namespace negocio
 
                     alumno.DNI = (string)datos.Lector["DNI"];
                     alumno.IdUsuario = (int)datos.Lector["IdUsuario"];
+
                     //alumno.Creditos = (int)datos.Lector["Creditos"];
+
                     if (!Convert.IsDBNull(datos.Lector["Creditos"]))
                     {
                         alumno.Creditos = (int)datos.Lector["Creditos"];
@@ -82,14 +86,19 @@ namespace negocio
                     listaAl.Add(alumno);
                 }
 
-                datos.cerrarConexion();
                     
                     return listaAl;
             }
             catch (Exception ex)
             {
+                
 
                 throw ex;
+            }
+            finally
+            {
+                    datos.cerrarConexion();
+
             }
 
         }
