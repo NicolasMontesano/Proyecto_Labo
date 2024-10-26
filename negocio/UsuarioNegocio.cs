@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dominio;
 
+
 namespace negocio
 {
     public class UsuarioNegocio
@@ -37,5 +38,32 @@ namespace negocio
 				throw ex;
 			}
         }
+
+		public void agregar(Usuario usu)
+		{
+			AccesoDatos datos = new AccesoDatos();
+
+
+			try
+			{
+				datos.setearConsulta("INSERT INTO Usuarios (Usuario, Contraseña, Tipo) VALUES ('" + usu.User + "', '" + usu.Pass + "', 4);");
+				datos.ejecutarAccion();
+
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+
+
+		}
+
+
+
     }
 }

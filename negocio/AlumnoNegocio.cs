@@ -1,6 +1,7 @@
 ﻿using dominio;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,33 @@ namespace negocio
             {
                     datos.cerrarConexion();
 
+            }
+
+        }
+
+
+        public void agregar(Alumno alu)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Creditos, Estado) VALUES ('"+ alu.Nombre +"', '"+ alu.Apellido +"', '"+alu.FechaNacimiento+"', '"+ alu.DNI + "', 4, 1, 1)");
+                datos.ejecutarAccion();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
 
         }

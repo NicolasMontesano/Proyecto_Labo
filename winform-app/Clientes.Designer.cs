@@ -29,22 +29,35 @@
         private void InitializeComponent()
         {
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnAgregarAlu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(46, 39);
+            this.dgvClientes.Location = new System.Drawing.Point(34, 32);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(618, 346);
+            this.dgvClientes.Size = new System.Drawing.Size(946, 346);
             this.dgvClientes.TabIndex = 0;
+            // 
+            // btnAgregarAlu
+            // 
+            this.btnAgregarAlu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregarAlu.Location = new System.Drawing.Point(34, 436);
+            this.btnAgregarAlu.Name = "btnAgregarAlu";
+            this.btnAgregarAlu.Size = new System.Drawing.Size(125, 36);
+            this.btnAgregarAlu.TabIndex = 1;
+            this.btnAgregarAlu.Text = "AGREGAR";
+            this.btnAgregarAlu.UseVisualStyleBackColor = false;
+            this.btnAgregarAlu.Click += new System.EventHandler(this.btnAgregarAlu_Click);
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 427);
+            this.ClientSize = new System.Drawing.Size(1154, 619);
+            this.Controls.Add(this.btnAgregarAlu);
             this.Controls.Add(this.dgvClientes);
             this.Name = "frmClientes";
             this.Text = "Clientes";
@@ -57,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btnAgregarAlu;
     }
 }

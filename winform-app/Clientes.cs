@@ -25,5 +25,14 @@ namespace winform_app
 
 
         }
+
+        private void btnAgregarAlu_Click(object sender, EventArgs e)
+        {
+            frmAgregarAL frmAgregarAL = new frmAgregarAL(); 
+            frmAgregarAL.ShowDialog();
+
+
+
+        }
     }
 }
