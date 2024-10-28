@@ -139,7 +139,14 @@ namespace negocio
 
             try
             {
-                //datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Estado) VALUES (@)");
+                datos.setearProcedimiento("SP_ALTA_ALUMNO");
+                datos.setearParametro("@Usuario",usu.User);
+                datos.setearParametro("@Contraseña",usu.Pass);
+                datos.setearParametro("@Nombre",alu.Nombre);
+                datos.setearParametro("@Apellido",alu.Apellido);
+                datos.setearParametro("@DNI",alu.DNI);
+                //datos.setearParametro("@FechaNacimiento",alu.FechaNacimiento.ToString("yyyyMMdddd"));
+                datos.setearParametro("@FechaNacimiento",alu.FechaNacimiento);
 
                 datos.ejecutarAccion();
 
@@ -158,8 +165,21 @@ namespace negocio
             }
 
         }
+        public void eliminarAlumno(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("update Alumnos set Estado = 0 Where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-
-
+       
     }
 }

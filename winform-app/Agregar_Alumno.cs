@@ -43,11 +43,12 @@ namespace winform_app
                 alumno.Apellido = txtApellido.Text;
                 alumno.FechaNacimiento = dtpFechNacAl.Value;
                 alumno.DNI = txtDniAl.Text;
-                usuario.User = txtPassUsu.Text;
+                usuario.User = txtUsserAl.Text;
                 usuario.Pass = txtPassUsu.Text;
 
-                alumnoNegocio.agregar(alumno);
-                usuarioNegocio.agregar(usuario);
+                alumnoNegocio.agregar_Sp(alumno, usuario);
+                //alumnoNegocio.agregar(alumno);
+                //usuarioNegocio.agregar(usuario);
 
                 MessageBox.Show("Agregado Exitosamente :D");
                 this.Close();

@@ -20,18 +20,18 @@ namespace winform_app
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
+            cargarClientes();
+        }
+        public void cargarClientes()
+        {
             AlumnoNegocio alNeg = new AlumnoNegocio();
             dgvClientes.DataSource = alNeg.Listar();
-
-
         }
-
         private void btnAgregarAlu_Click(object sender, EventArgs e)
         {
             frmAgregarAL frmAgregarAL = new frmAgregarAL(); 
             frmAgregarAL.ShowDialog();
-
-
+            cargarClientes();
 
         }
     }

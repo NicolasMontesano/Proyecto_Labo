@@ -145,3 +145,8 @@ insert into Usuarios (Usuario,Contraseña,Tipo) values('NicoPrueba','Prueba',4)
 insert into Usuarios (Usuario,Contraseña,Tipo) values('Agus','test',2)
 
 SELECT * FROM Usuarios;
+
+select *from TipoUsuarios
+select *from Empleados
+
+insert into Empleados (Nombre,Apellido,DNI,IdUsuario,Activo) values('Administrador','Administrador','00000000',1,1)
