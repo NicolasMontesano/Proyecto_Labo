@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    public class Alumno
+    public class Empleado
     {
-        public int idAlumno { get; set; }
+        public long Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public DateTime FechaNacimiento { get; set; }
         public string DNI { get; set; }
-        public int IdUsuario { get; set; }
-        public int Estado { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+        public Usuario usuario { get; set; }
+        public int Activo { get; set; }
     }
 }

@@ -50,7 +50,7 @@ namespace winform_app
                     return;
                 }
 
-                MessageBox.Show("Ingreso exitoso");
+                //MessageBox.Show("Ingreso exitoso");
                 //redireccionar a la siguiente página
 
                 if (usu.TipoUsuario == 4)
@@ -59,30 +59,28 @@ namespace winform_app
 
                     Alumno alumno = negAlumno.ObtenerAlumnoxIdUsuario(usu.Id);
 
-                    frmIngreso_Alumno frmIngreso = new frmIngreso_Alumno(alumno);
-                    this.Hide();
-                    frmIngreso.Show();
+                    if(alumno.Estado == 1)
+                    {
+                        frmIngreso_Alumno frmIngreso = new frmIngreso_Alumno(alumno);
+                        this.Hide();
+                        frmIngreso.Show();
+                    }
+                    MessageBox.Show("Usuario inactivo");
                 }
                 else
                 {
-                    switch (usu.TipoUsuario)
+                    EmpleadoNegocio empNeg = new EmpleadoNegocio();
+                    Empleado emp = new Empleado();
+
+                    emp = empNeg.ObtenerEmpleadoxIdUsuario(usu.Id);
+                    emp.usuario = new Usuario();
+                    emp.usuario = usu;
+
+                    if(emp.Activo == 1)
                     {
-                        case 1: //admin
-
-                            break;
-
-                        case 2: ///si es Profesor
-
-                            ProfesorNegocio profeNeg = new ProfesorNegocio();
-
-                            //int profe = profeNeg.ObtenerProfexIdUsuario(usu.Id);
-
-                            frmPanel_Gestion ventGestion = new frmPanel_Gestion(usu.TipoUsuario);
-                            ventGestion.Show();
-
-                            break;
-                        case 3://redirigir a pantalla de empresa
-                            break;
+                        this.Hide();
+                        frmPanel_Gestion ventGestion = new frmPanel_Gestion(emp);
+                        ventGestion.Show();
                     }
                 }
             }

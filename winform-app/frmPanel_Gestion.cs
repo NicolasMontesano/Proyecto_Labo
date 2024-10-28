@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,31 +13,30 @@ namespace winform_app
 {
     public partial class frmPanel_Gestion : Form
     {
-        public int Tipo_usuario = 0;
-        public frmPanel_Gestion(int tipo_usuario)
+        public Empleado emp = null;
+        public frmPanel_Gestion(Empleado emp)
         {
             InitializeComponent();
-            Tipo_usuario = tipo_usuario;
 
-            if(Tipo_usuario == 0)
+            if (emp.usuario.TipoUsuario == 0)
             {
                 MessageBox.Show("Error al ingresar");
                 this.Close();
             }
-            if(Tipo_usuario != 1)
+            if (emp.usuario.TipoUsuario != 1)
             {
-                tsmiEmpleados.Enabled = false;
+                tsmiEmpleados.Visible = false;
             }
-            if(tipo_usuario == 2)
+            if (emp.usuario.TipoUsuario == 2)
             {
-                tsmiIngresos.Enabled = false;
-                tsmiFacturas.Enabled = false;
+                tsmiIngresos.Visible = false;
+                tsmiFacturas.Visible = false;
             }
-            if( tipo_usuario == 3)
+            if (emp.usuario.TipoUsuario == 3)
             {
-                tsmiDisciplinas.Enabled = false;
-                tsmiRutinas.Enabled = false;
-                tsmiEjercicios.Enabled = false;
+                tsmiDisciplinas.Visible = false;
+                tsmiRutinas.Visible = false;
+                tsmiEjercicios.Visible = false;
             }
         }
 

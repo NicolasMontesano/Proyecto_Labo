@@ -24,13 +24,13 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    alumno.idAlumno = (long)datos.Lector["IdAlumno"];
+                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
                     alumno.Nombre = (string)datos.Lector["Usuario"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
                     alumno.DNI = (string)datos.Lector["DNI"];
                     alumno.IdUsuario = (int)datos.Lector["IdUsuario"];
-                    alumno.Creditos = (int)datos.Lector["Creditos"];
+                    //alumno.Creditos = (int)datos.Lector["Creditos"];
                     alumno.Estado = (int)datos.Lector["Estado"];
 
                 }
@@ -53,7 +53,8 @@ namespace negocio
             try
             {
                 
-                datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario,AL.Creditos, AL.Estado from Alumnos as AL inner Join Usuarios As U on U.Id = AL.IdUsuario inner join TipoUsuarios as TU On TU.Id = U.Tipo Where TU.Id=4");
+                //datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario,AL.Creditos, AL.Estado from Alumnos as AL inner Join Usuarios As U on U.Id = AL.IdUsuario inner join TipoUsuarios as TU On TU.Id = U.Tipo Where TU.Id=4");
+                datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario, AL.Estado from Alumnos as AL ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -61,7 +62,7 @@ namespace negocio
 
                     Alumno alumno = new Alumno();
 
-                    alumno.idAlumno = (long)datos.Lector["IdAlumno"];
+                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
                     alumno.Nombre = (string)datos.Lector["Nombre"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     //alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
@@ -77,10 +78,10 @@ namespace negocio
 
                     //alumno.Creditos = (int)datos.Lector["Creditos"];
 
-                    if (!Convert.IsDBNull(datos.Lector["Creditos"]))
-                    {
-                        alumno.Creditos = (int)datos.Lector["Creditos"];
-                    }
+                    //if (!Convert.IsDBNull(datos.Lector["Creditos"]))
+                    //{
+                    //    alumno.Creditos = (int)datos.Lector["Creditos"];
+                    //}
 
                     alumno.Estado = (int)datos.Lector["Estado"];
 
@@ -131,7 +132,32 @@ namespace negocio
 
         }
 
+        public void agregar_Sp(Alumno alu, Usuario usu)
+        {
 
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                //datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Estado) VALUES (@)");
+
+                datos.ejecutarAccion();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
 
 
 
