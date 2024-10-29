@@ -16,9 +16,16 @@ namespace winform_app
 {
     public partial class frmAgregarAL : Form
     {
+        private Alumno alumno = null;
         public frmAgregarAL()
         {
             InitializeComponent();
+        }
+        public frmAgregarAL(Alumno al)
+        {
+            InitializeComponent();
+            Text = "Modficar ";
+            this.alumno = al;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -28,17 +35,18 @@ namespace winform_app
 
         private void btnAgregarAlu_Click(object sender, EventArgs e)
         {
-            
-            Alumno alumno = new Alumno();   
+
             Usuario usuario = new Usuario();
 
             AlumnoNegocio alumnoNegocio = new AlumnoNegocio();
-            UsuarioNegocio usuarioNegocio= new UsuarioNegocio();
-
-
+            UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
 
             try
             {
+                if (alumno == null)
+                    alumno = new Alumno();
+
+
                 alumno.Nombre = txtNombre.Text;
                 alumno.Apellido = txtApellido.Text;
                 alumno.FechaNacimiento = dtpFechNacAl.Value;
@@ -46,12 +54,25 @@ namespace winform_app
                 usuario.User = txtUsserAl.Text;
                 usuario.Pass = txtPassUsu.Text;
 
-                alumnoNegocio.agregar_Sp(alumno, usuario);
-                //alumnoNegocio.agregar(alumno);
-                //usuarioNegocio.agregar(usuario);
 
-                MessageBox.Show("Agregado Exitosamente :D");
-                this.Close();
+                if (alumno.idAlumno != 0)
+                {
+
+                    alumnoNegocio.Modificar(alumno);
+                    MessageBox.Show("MODIFICADO EXITOSAMENTE :)");
+                    this.Close();
+
+                }
+                else
+                {
+                    alumnoNegocio.agregar_Sp(alumno, usuario);
+                    //alumnoNegocio.agregar(alumno);
+                    //usuarioNegocio.agregar(usuario);
+
+                    MessageBox.Show("Agregado Exitosamente :D");
+                    this.Close();
+
+                }
 
             }
             catch (Exception ex)
@@ -59,9 +80,33 @@ namespace winform_app
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void frmAgregarAL_Load(object sender, EventArgs e)
+        {
+            try
+            {
 
 
+                if (alumno != null)
+                {
+                    txtNombre.Text = alumno.Nombre;
+                    txtApellido.Text = alumno.Apellido;
+                    txtDniAl.Text = alumno.DNI;
+                    ///dtpFechNacAl.Value = alumno.FechaNacimiento;
+                    txtUsserAl.Visible = false;
+                    txtPassUsu.Visible = false;
+                    lblContrasñaAl.Visible = false;
+                    lblUsu.Visible = false;
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

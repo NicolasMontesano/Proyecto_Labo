@@ -183,6 +183,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "frmAgregarAL";
             this.Text = "Agregar_Alumno";
+            this.Load += new System.EventHandler(this.frmAgregarAL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

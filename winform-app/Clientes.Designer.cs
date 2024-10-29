@@ -31,6 +31,7 @@
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnAgregarAlu = new System.Windows.Forms.Button();
             this.btnEliminarAlu = new System.Windows.Forms.Button();
+            this.btnModificarAl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,19 +60,32 @@
             // 
             // btnEliminarAlu
             // 
-            this.btnEliminarAlu.Location = new System.Drawing.Point(186, 436);
+            this.btnEliminarAlu.BackColor = System.Drawing.Color.Red;
+            this.btnEliminarAlu.Location = new System.Drawing.Point(372, 436);
             this.btnEliminarAlu.Name = "btnEliminarAlu";
-            this.btnEliminarAlu.Size = new System.Drawing.Size(98, 36);
+            this.btnEliminarAlu.Size = new System.Drawing.Size(125, 36);
             this.btnEliminarAlu.TabIndex = 2;
             this.btnEliminarAlu.Text = "ELIMINIAR";
-            this.btnEliminarAlu.UseVisualStyleBackColor = true;
+            this.btnEliminarAlu.UseVisualStyleBackColor = false;
             this.btnEliminarAlu.Click += new System.EventHandler(this.btnEliminarAlu_Click_1);
+            // 
+            // btnModificarAl
+            // 
+            this.btnModificarAl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnModificarAl.Location = new System.Drawing.Point(201, 436);
+            this.btnModificarAl.Name = "btnModificarAl";
+            this.btnModificarAl.Size = new System.Drawing.Size(125, 36);
+            this.btnModificarAl.TabIndex = 3;
+            this.btnModificarAl.Text = "MODIFICAR";
+            this.btnModificarAl.UseVisualStyleBackColor = false;
+            this.btnModificarAl.Click += new System.EventHandler(this.btnModificarAl_Click);
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 619);
+            this.Controls.Add(this.btnModificarAl);
             this.Controls.Add(this.btnEliminarAlu);
             this.Controls.Add(this.btnAgregarAlu);
             this.Controls.Add(this.dgvClientes);
@@ -88,5 +102,6 @@
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnAgregarAlu;
         private System.Windows.Forms.Button btnEliminarAlu;
+        private System.Windows.Forms.Button btnModificarAl;
     }
 }

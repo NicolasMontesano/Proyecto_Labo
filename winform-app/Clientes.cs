@@ -56,5 +56,17 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnModificarAl_Click(object sender, EventArgs e)
+        {
+            Alumno alSeleccionado;
+
+            alSeleccionado = (Alumno)dgvClientes.CurrentRow.DataBoundItem;
+
+
+            frmAgregarAL modificar = new frmAgregarAL(alSeleccionado);
+            modificar.ShowDialog();
+            cargarClientes();
+        }
     }
 }

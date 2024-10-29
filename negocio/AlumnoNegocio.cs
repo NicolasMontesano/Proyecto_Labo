@@ -180,6 +180,35 @@ namespace negocio
             }
         }
 
-       
+
+        public void Modificar(Alumno al)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update Alumnos set  Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI where IdAlumno = @Idalumno");
+                datos.setearParametro("@Nombre", al.Nombre);
+                datos.setearParametro("@Apellido", al.Apellido);
+                datos.setearParametro("@Idalumno", al.idAlumno);
+                // datos.setearParametro("@FechaNacimineto", al.FechaNacimiento);
+                datos.setearParametro("@DNI", al.DNI);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
+
+
     }
 }
