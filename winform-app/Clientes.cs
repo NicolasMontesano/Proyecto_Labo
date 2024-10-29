@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
 
 namespace winform_app
 {
@@ -33,6 +34,27 @@ namespace winform_app
             frmAgregarAL.ShowDialog();
             cargarClientes();
 
+        }
+        private void btnEliminarAlu_Click_1(object sender, EventArgs e)
+        {
+            AlumnoNegocio alNeg = new AlumnoNegocio();
+            Alumno seleccionado;
+            Alumno Alumno= new Alumno();
+            alNeg.eliminarAlumno(Alumno.idAlumno);
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Quieres eliminar este alumno?");
+                if(respuesta == DialogResult.OK)
+                {
+                    seleccionado = (Alumno)dgvClientes.CurrentRow.DataBoundItem;
+                    alNeg.eliminarAlumno(seleccionado.idAlumno);
+                    cargarClientes();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnAgregarAlu = new System.Windows.Forms.Button();
+            this.btnEliminarAlu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,22 @@
             this.btnAgregarAlu.UseVisualStyleBackColor = false;
             this.btnAgregarAlu.Click += new System.EventHandler(this.btnAgregarAlu_Click);
             // 
+            // btnEliminarAlu
+            // 
+            this.btnEliminarAlu.Location = new System.Drawing.Point(186, 436);
+            this.btnEliminarAlu.Name = "btnEliminarAlu";
+            this.btnEliminarAlu.Size = new System.Drawing.Size(98, 36);
+            this.btnEliminarAlu.TabIndex = 2;
+            this.btnEliminarAlu.Text = "ELIMINIAR";
+            this.btnEliminarAlu.UseVisualStyleBackColor = true;
+            this.btnEliminarAlu.Click += new System.EventHandler(this.btnEliminarAlu_Click_1);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 619);
+            this.Controls.Add(this.btnEliminarAlu);
             this.Controls.Add(this.btnAgregarAlu);
             this.Controls.Add(this.dgvClientes);
             this.Name = "frmClientes";
@@ -75,5 +87,6 @@
 
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnAgregarAlu;
+        private System.Windows.Forms.Button btnEliminarAlu;
     }
 }
