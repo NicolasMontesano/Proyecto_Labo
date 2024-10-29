@@ -170,7 +170,7 @@ namespace negocio
             try
             {
                 AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("update Alumnos set Estado = 0 Where id = @id");
+                datos.setearConsulta("update Alumnos set Estado = 0 Where idAlumno = @id");
                 datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
             }
