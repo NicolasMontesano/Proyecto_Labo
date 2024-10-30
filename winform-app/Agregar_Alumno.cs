@@ -94,10 +94,17 @@ namespace winform_app
                     txtApellido.Text = alumno.Apellido;
                     txtDniAl.Text = alumno.DNI;
                     ///dtpFechNacAl.Value = alumno.FechaNacimiento;
-                    txtUsserAl.Visible = false;
-                    txtPassUsu.Visible = false;
-                    lblContrasñaAl.Visible = false;
-                    lblUsu.Visible = false;
+                    //txtUsserAl.Visible = false;
+                    //txtPassUsu.Visible = false;
+                    //lblContrasñaAl.Visible = false;
+                    //lblUsu.Visible = false;
+                    UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+
+                    Usuario usu = new Usuario();
+                    usu = usuarioNegocio.ObtenerUsuario(alumno.IdUsuario);
+
+                    txtUsserAl.Text = usu.User;
+                    txtPassUsu.Text = usu.Pass;
 
                 }
 

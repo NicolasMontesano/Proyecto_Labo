@@ -63,6 +63,33 @@ namespace negocio
 
 		}
 
+        public Usuario ObtenerUsuario(int idUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select Id,Usuario,Contraseña,Tipo from Usuarios where Id = @id ");
+                datos.setearParametro("@id", idUsuario);
+                datos.ejecutarLectura();
+
+                Usuario usu = new Usuario();
+
+                while (datos.Lector.Read())
+                {
+                    usu.Id = (int)datos.Lector["Id"];
+                    usu.User = (string)datos.Lector["Usuario"];
+                    usu.Pass = (string)datos.Lector["Contraseña"];
+                    usu.TipoUsuario = (int)datos.Lector["Tipo"];
+                }
+
+                return usu;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
 
     }
