@@ -57,5 +57,10 @@ namespace winform_app
             ventCliente.ShowDialog();
 
         }
+
+        private void tsmiIngresos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
