@@ -89,7 +89,7 @@ GO
 CREATE TABLE Asistencia (
     IdAsistencia Int NOT NULL PRIMARY KEY,
     IdAlumno Int NOT NULL REFERENCES Alumnos(IdAlumno),
-    IdEmpleado Int NOT NULL REFERENCES Empleados(IdEmpleado),
+    IdEmpleado Int NOT NULL REFERENCES Empleados(IdEmpleado), -- hace referencia al recepcionista
     FechaEntrada DATETIME NOT NULL,
     FechaSalida DATETIME NOT NULL
 );

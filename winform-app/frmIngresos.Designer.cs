@@ -36,14 +36,15 @@
             this.dtpFiltro = new System.Windows.Forms.DateTimePicker();
             this.lblDesde = new System.Windows.Forms.Label();
             this.panelHorario = new System.Windows.Forms.Panel();
-            this.lblHasta = new System.Windows.Forms.Label();
-            this.cboHoraDesde = new System.Windows.Forms.ComboBox();
-            this.cboHoraHasta = new System.Windows.Forms.ComboBox();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.lblMinutos = new System.Windows.Forms.Label();
-            this.cboMinutosDesde = new System.Windows.Forms.ComboBox();
             this.cboMinutosHasta = new System.Windows.Forms.ComboBox();
+            this.cboMinutosDesde = new System.Windows.Forms.ComboBox();
+            this.lblMinutos = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.cboHoraHasta = new System.Windows.Forms.ComboBox();
+            this.cboHoraDesde = new System.Windows.Forms.ComboBox();
+            this.lblHasta = new System.Windows.Forms.Label();
             this.btnNuevoIngreso = new System.Windows.Forms.Button();
+            this.btnDisciplinas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             this.panelHorario.SuspendLayout();
             this.SuspendLayout();
@@ -130,50 +131,14 @@
             this.panelHorario.Size = new System.Drawing.Size(369, 119);
             this.panelHorario.TabIndex = 7;
             // 
-            // lblHasta
+            // cboMinutosHasta
             // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(14, 83);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(35, 13);
-            this.lblHasta.TabIndex = 7;
-            this.lblHasta.Text = "Hasta";
-            // 
-            // cboHoraDesde
-            // 
-            this.cboHoraDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraDesde.FormattingEnabled = true;
-            this.cboHoraDesde.Location = new System.Drawing.Point(58, 32);
-            this.cboHoraDesde.Name = "cboHoraDesde";
-            this.cboHoraDesde.Size = new System.Drawing.Size(87, 21);
-            this.cboHoraDesde.TabIndex = 8;
-            // 
-            // cboHoraHasta
-            // 
-            this.cboHoraHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHoraHasta.FormattingEnabled = true;
-            this.cboHoraHasta.Location = new System.Drawing.Point(58, 80);
-            this.cboHoraHasta.Name = "cboHoraHasta";
-            this.cboHoraHasta.Size = new System.Drawing.Size(87, 21);
-            this.cboHoraHasta.TabIndex = 9;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(84, 9);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(30, 13);
-            this.lblHora.TabIndex = 10;
-            this.lblHora.Text = "Hora";
-            // 
-            // lblMinutos
-            // 
-            this.lblMinutos.AutoSize = true;
-            this.lblMinutos.Location = new System.Drawing.Point(244, 9);
-            this.lblMinutos.Name = "lblMinutos";
-            this.lblMinutos.Size = new System.Drawing.Size(44, 13);
-            this.lblMinutos.TabIndex = 11;
-            this.lblMinutos.Text = "Minutos";
+            this.cboMinutosHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMinutosHasta.FormattingEnabled = true;
+            this.cboMinutosHasta.Location = new System.Drawing.Point(214, 80);
+            this.cboMinutosHasta.Name = "cboMinutosHasta";
+            this.cboMinutosHasta.Size = new System.Drawing.Size(87, 21);
+            this.cboMinutosHasta.TabIndex = 13;
             // 
             // cboMinutosDesde
             // 
@@ -184,14 +149,50 @@
             this.cboMinutosDesde.Size = new System.Drawing.Size(87, 21);
             this.cboMinutosDesde.TabIndex = 12;
             // 
-            // cboMinutosHasta
+            // lblMinutos
             // 
-            this.cboMinutosHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMinutosHasta.FormattingEnabled = true;
-            this.cboMinutosHasta.Location = new System.Drawing.Point(214, 80);
-            this.cboMinutosHasta.Name = "cboMinutosHasta";
-            this.cboMinutosHasta.Size = new System.Drawing.Size(87, 21);
-            this.cboMinutosHasta.TabIndex = 13;
+            this.lblMinutos.AutoSize = true;
+            this.lblMinutos.Location = new System.Drawing.Point(244, 9);
+            this.lblMinutos.Name = "lblMinutos";
+            this.lblMinutos.Size = new System.Drawing.Size(44, 13);
+            this.lblMinutos.TabIndex = 11;
+            this.lblMinutos.Text = "Minutos";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(84, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(30, 13);
+            this.lblHora.TabIndex = 10;
+            this.lblHora.Text = "Hora";
+            // 
+            // cboHoraHasta
+            // 
+            this.cboHoraHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHoraHasta.FormattingEnabled = true;
+            this.cboHoraHasta.Location = new System.Drawing.Point(58, 80);
+            this.cboHoraHasta.Name = "cboHoraHasta";
+            this.cboHoraHasta.Size = new System.Drawing.Size(87, 21);
+            this.cboHoraHasta.TabIndex = 9;
+            // 
+            // cboHoraDesde
+            // 
+            this.cboHoraDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHoraDesde.FormattingEnabled = true;
+            this.cboHoraDesde.Location = new System.Drawing.Point(58, 32);
+            this.cboHoraDesde.Name = "cboHoraDesde";
+            this.cboHoraDesde.Size = new System.Drawing.Size(87, 21);
+            this.cboHoraDesde.TabIndex = 8;
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(14, 83);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(35, 13);
+            this.lblHasta.TabIndex = 7;
+            this.lblHasta.Text = "Hasta";
             // 
             // btnNuevoIngreso
             // 
@@ -201,12 +202,23 @@
             this.btnNuevoIngreso.TabIndex = 8;
             this.btnNuevoIngreso.Text = "Nuevo Ingreso";
             this.btnNuevoIngreso.UseVisualStyleBackColor = true;
+            this.btnNuevoIngreso.Click += new System.EventHandler(this.btnNuevoIngreso_Click);
+            // 
+            // btnDisciplinas
+            // 
+            this.btnDisciplinas.Location = new System.Drawing.Point(950, 384);
+            this.btnDisciplinas.Name = "btnDisciplinas";
+            this.btnDisciplinas.Size = new System.Drawing.Size(116, 23);
+            this.btnDisciplinas.TabIndex = 9;
+            this.btnDisciplinas.Text = "Disciplinas Alumno";
+            this.btnDisciplinas.UseVisualStyleBackColor = true;
             // 
             // frmIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 542);
+            this.Controls.Add(this.btnDisciplinas);
             this.Controls.Add(this.btnNuevoIngreso);
             this.Controls.Add(this.panelHorario);
             this.Controls.Add(this.dtpFiltro);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Label lblMinutos;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnNuevoIngreso;
+        private System.Windows.Forms.Button btnDisciplinas;
     }
 }
