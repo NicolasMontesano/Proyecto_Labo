@@ -54,6 +54,33 @@ namespace negocio
 			{
 				datos.cerrarConexion();
 			}
+        } 
+		public void AgregarAsistencia(DateTime fechaDesde,DateTime fechaHasta , int idAlumno,  int idEmpleado)
+        {
+			AccesoDatos datos = new AccesoDatos();
+			List<Ingreso> listar = new List<Ingreso>();
+
+			try
+			{
+				datos.setearProcedimiento("spListarIngreso");
+				datos.setearParametro("@IdAlumno", idAlumno);
+				datos.setearParametro("@IdEmpleado", idEmpleado);
+				datos.setearParametro("@FechaEntrada", fechaDesde);
+				datos.setearParametro("@FechaSalida", fechaHasta);
+
+                datos.ejecutarAccion();
+
+
+            }
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
         }
     }
 }
