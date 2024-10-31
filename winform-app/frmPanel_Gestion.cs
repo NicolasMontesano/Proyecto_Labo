@@ -62,5 +62,23 @@ namespace winform_app
         {
 
         }
+
+        private void profesoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarEmpleado AgregoEmple = new AgregarEmpleado();
+            AgregoEmple.ShowDialog();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaEmpleados ListaEmple = new ListaEmpleados();
+            ListaEmple.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaEmpleados ListaEmple = new ListaEmpleados();
+            ListaEmple.ShowDialog();
+        }
     }
 }

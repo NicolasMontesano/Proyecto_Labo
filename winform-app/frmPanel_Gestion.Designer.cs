@@ -31,13 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiEmpleados = new System.Windows.Forms.ToolStripMenuItem();
             this.profesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recepcionistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDisciplinas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFacturas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRutinas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEjercicios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIngresos = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.tsmiIngresos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,61 +63,71 @@
             // 
             this.tsmiEmpleados.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.profesoresToolStripMenuItem,
-            this.recepcionistasToolStripMenuItem});
+            this.modificarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
             this.tsmiEmpleados.Name = "tsmiEmpleados";
-            this.tsmiEmpleados.Size = new System.Drawing.Size(85, 21);
+            this.tsmiEmpleados.Size = new System.Drawing.Size(77, 20);
             this.tsmiEmpleados.Text = "Empleados";
             // 
             // profesoresToolStripMenuItem
             // 
             this.profesoresToolStripMenuItem.Name = "profesoresToolStripMenuItem";
-            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.profesoresToolStripMenuItem.Text = "Profesores";
-            // 
-            // recepcionistasToolStripMenuItem
-            // 
-            this.recepcionistasToolStripMenuItem.Name = "recepcionistasToolStripMenuItem";
-            this.recepcionistasToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.recepcionistasToolStripMenuItem.Text = "Recepcionistas";
+            this.profesoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profesoresToolStripMenuItem.Text = "Agregar";
+            this.profesoresToolStripMenuItem.Click += new System.EventHandler(this.profesoresToolStripMenuItem_Click);
             // 
             // tsmiClientes
             // 
             this.tsmiClientes.Name = "tsmiClientes";
-            this.tsmiClientes.Size = new System.Drawing.Size(65, 21);
+            this.tsmiClientes.Size = new System.Drawing.Size(61, 20);
             this.tsmiClientes.Text = "Clientes";
             this.tsmiClientes.Click += new System.EventHandler(this.tsmiClientes_Click);
             // 
             // tsmiDisciplinas
             // 
             this.tsmiDisciplinas.Name = "tsmiDisciplinas";
-            this.tsmiDisciplinas.Size = new System.Drawing.Size(81, 21);
+            this.tsmiDisciplinas.Size = new System.Drawing.Size(75, 20);
             this.tsmiDisciplinas.Text = "Disciplinas";
             // 
             // tsmiFacturas
             // 
             this.tsmiFacturas.Name = "tsmiFacturas";
-            this.tsmiFacturas.Size = new System.Drawing.Size(68, 21);
+            this.tsmiFacturas.Size = new System.Drawing.Size(63, 20);
             this.tsmiFacturas.Text = "Facturas";
             this.tsmiFacturas.Click += new System.EventHandler(this.vistasToolStripMenuItem_Click);
             // 
             // tsmiRutinas
             // 
             this.tsmiRutinas.Name = "tsmiRutinas";
-            this.tsmiRutinas.Size = new System.Drawing.Size(62, 21);
+            this.tsmiRutinas.Size = new System.Drawing.Size(58, 20);
             this.tsmiRutinas.Text = "Rutinas";
             // 
             // tsmiEjercicios
             // 
             this.tsmiEjercicios.Name = "tsmiEjercicios";
-            this.tsmiEjercicios.Size = new System.Drawing.Size(74, 21);
+            this.tsmiEjercicios.Size = new System.Drawing.Size(68, 20);
             this.tsmiEjercicios.Text = "Ejercicios";
             // 
             // tsmiIngresos
             // 
             this.tsmiIngresos.Name = "tsmiIngresos";
-            this.tsmiIngresos.Size = new System.Drawing.Size(70, 21);
+            this.tsmiIngresos.Size = new System.Drawing.Size(63, 20);
             this.tsmiIngresos.Text = "Ingresos";
             this.tsmiIngresos.Click += new System.EventHandler(this.tsmiIngresos_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // frmPanel_Gestion
             // 
@@ -140,12 +151,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiEmpleados;
         private System.Windows.Forms.ToolStripMenuItem profesoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recepcionistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiClientes;
         private System.Windows.Forms.ToolStripMenuItem tsmiDisciplinas;
         private System.Windows.Forms.ToolStripMenuItem tsmiFacturas;
         private System.Windows.Forms.ToolStripMenuItem tsmiRutinas;
         private System.Windows.Forms.ToolStripMenuItem tsmiEjercicios;
         private System.Windows.Forms.ToolStripMenuItem tsmiIngresos;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

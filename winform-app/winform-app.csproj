@@ -47,17 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEmpleado.Designer.cs">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_Alumno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agregar_Alumno.Designer.cs">
       <DependentUpon>Agregar_Alumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
+    <Compile Include="ListaAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="ListaAlumnos.Designer.cs">
+      <DependentUpon>ListaAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAlta_Ingreso.cs">
       <SubType>Form</SubType>
@@ -89,13 +95,22 @@
     <Compile Include="frmPanel_Gestion.Designer.cs">
       <DependentUpon>frmPanel_Gestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaEmpleados.Designer.cs">
+      <DependentUpon>ListaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarEmpleado.resx">
+      <DependentUpon>AgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Alumno.resx">
       <DependentUpon>Agregar_Alumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="ListaAlumnos.resx">
+      <DependentUpon>ListaAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlta_Ingreso.resx">
       <DependentUpon>frmAlta_Ingreso.cs</DependentUpon>
@@ -111,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPanel_Gestion.resx">
       <DependentUpon>frmPanel_Gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaEmpleados.resx">
+      <DependentUpon>ListaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
