@@ -50,7 +50,7 @@
             this.pagosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(374, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,44 +60,44 @@
             this.actualToolStripMenuItem,
             this.historicoToolStripMenuItem});
             this.itemRutina.Name = "itemRutina";
-            this.itemRutina.Size = new System.Drawing.Size(87, 21);
+            this.itemRutina.Size = new System.Drawing.Size(80, 20);
             this.itemRutina.Text = "Mis Rutinas";
             // 
             // actualToolStripMenuItem
             // 
             this.actualToolStripMenuItem.Name = "actualToolStripMenuItem";
-            this.actualToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.actualToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.actualToolStripMenuItem.Text = "Actual";
             // 
             // historicoToolStripMenuItem
             // 
             this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.historicoToolStripMenuItem.Text = "Historico";
             // 
             // asistenciaToolStripMenuItem
             // 
             this.asistenciaToolStripMenuItem.Name = "asistenciaToolStripMenuItem";
-            this.asistenciaToolStripMenuItem.Size = new System.Drawing.Size(81, 21);
+            this.asistenciaToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.asistenciaToolStripMenuItem.Text = "Disciplinas";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(77, 21);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.salirToolStripMenuItem.Text = "Asistencia";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.pagosToolStripMenuItem.Text = "Pagos";
             // 
             // lblIngreso
             // 
             this.lblIngreso.AutoSize = true;
-            this.lblIngreso.Location = new System.Drawing.Point(139, 128);
+            this.lblIngreso.Location = new System.Drawing.Point(139, 86);
             this.lblIngreso.Name = "lblIngreso";
             this.lblIngreso.Size = new System.Drawing.Size(85, 13);
             this.lblIngreso.TabIndex = 1;
@@ -105,24 +105,31 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(142, 270);
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Location = new System.Drawing.Point(142, 177);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmIngreso_Alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(374, 272);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(390, 311);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(390, 311);
             this.Name = "frmIngreso_Alumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIngreso_Alumno";
             this.Load += new System.EventHandler(this.frmIngreso_Alumno_Load);
             this.menuStrip1.ResumeLayout(false);

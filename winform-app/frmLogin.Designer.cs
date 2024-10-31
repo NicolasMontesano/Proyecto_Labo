@@ -41,7 +41,7 @@ namespace winform_app
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(166, 96);
+            this.lblUsuario.Location = new System.Drawing.Point(70, 96);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace winform_app
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(148, 133);
+            this.lblContraseña.Location = new System.Drawing.Point(70, 145);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(64, 13);
             this.lblContraseña.TabIndex = 1;
@@ -58,14 +58,14 @@ namespace winform_app
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(227, 96);
+            this.txtUsuario.Location = new System.Drawing.Point(156, 96);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(209, 20);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(227, 133);
+            this.txtContraseña.Location = new System.Drawing.Point(156, 142);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(209, 20);
             this.txtContraseña.TabIndex = 2;
@@ -73,29 +73,31 @@ namespace winform_app
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(227, 183);
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnIngresar.Location = new System.Drawing.Point(174, 196);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(332, 183);
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.Location = new System.Drawing.Point(269, 196);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(329, 36);
+            this.label1.Location = new System.Drawing.Point(169, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 29);
             this.label1.TabIndex = 5;
@@ -105,7 +107,8 @@ namespace winform_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 384);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(519, 283);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
@@ -113,6 +116,10 @@ namespace winform_app
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(535, 322);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(535, 322);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

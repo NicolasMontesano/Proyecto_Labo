@@ -112,22 +112,24 @@
             // 
             // btnAgregarAlu
             // 
-            this.btnAgregarAlu.Location = new System.Drawing.Point(138, 317);
+            this.btnAgregarAlu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAgregarAlu.Location = new System.Drawing.Point(182, 291);
             this.btnAgregarAlu.Name = "btnAgregarAlu";
-            this.btnAgregarAlu.Size = new System.Drawing.Size(101, 25);
+            this.btnAgregarAlu.Size = new System.Drawing.Size(76, 25);
             this.btnAgregarAlu.TabIndex = 10;
-            this.btnAgregarAlu.Text = "ACEPTAR";
-            this.btnAgregarAlu.UseVisualStyleBackColor = true;
+            this.btnAgregarAlu.Text = "Aceptar";
+            this.btnAgregarAlu.UseVisualStyleBackColor = false;
             this.btnAgregarAlu.Click += new System.EventHandler(this.btnAgregarAlu_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(278, 317);
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.Location = new System.Drawing.Point(274, 291);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(101, 25);
+            this.btnCancelar.Size = new System.Drawing.Size(79, 25);
             this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtUsserAl
@@ -166,7 +168,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 414);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(484, 353);
             this.Controls.Add(this.lblContrasñaAl);
             this.Controls.Add(this.lblUsu);
             this.Controls.Add(this.txtPassUsu);
@@ -181,7 +184,12 @@
             this.Controls.Add(this.txtDniAl);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(500, 392);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 392);
             this.Name = "frmAgregarAL";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar_Alumno";
             this.Load += new System.EventHandler(this.frmAgregarAL_Load);
             this.ResumeLayout(false);

@@ -89,12 +89,12 @@
             // 
             this.dgvIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngresos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvIngresos.Location = new System.Drawing.Point(100, 209);
+            this.dgvIngresos.Location = new System.Drawing.Point(109, 209);
             this.dgvIngresos.MultiSelect = false;
             this.dgvIngresos.Name = "dgvIngresos";
             this.dgvIngresos.RowHeadersWidth = 45;
             this.dgvIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngresos.Size = new System.Drawing.Size(802, 321);
+            this.dgvIngresos.Size = new System.Drawing.Size(802, 250);
             this.dgvIngresos.TabIndex = 4;
             // 
             // dtpFiltro
@@ -196,7 +196,7 @@
             // 
             // btnNuevoIngreso
             // 
-            this.btnNuevoIngreso.Location = new System.Drawing.Point(950, 463);
+            this.btnNuevoIngreso.Location = new System.Drawing.Point(941, 436);
             this.btnNuevoIngreso.Name = "btnNuevoIngreso";
             this.btnNuevoIngreso.Size = new System.Drawing.Size(116, 23);
             this.btnNuevoIngreso.TabIndex = 8;
@@ -206,7 +206,7 @@
             // 
             // btnDisciplinas
             // 
-            this.btnDisciplinas.Location = new System.Drawing.Point(950, 384);
+            this.btnDisciplinas.Location = new System.Drawing.Point(941, 386);
             this.btnDisciplinas.Name = "btnDisciplinas";
             this.btnDisciplinas.Size = new System.Drawing.Size(116, 23);
             this.btnDisciplinas.TabIndex = 9;
@@ -217,7 +217,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 542);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1099, 484);
             this.Controls.Add(this.btnDisciplinas);
             this.Controls.Add(this.btnNuevoIngreso);
             this.Controls.Add(this.panelHorario);
@@ -227,7 +228,12 @@
             this.Controls.Add(this.cbxSoloActivos);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.txtFiltro);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1115, 523);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1115, 523);
             this.Name = "frmIngresos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresos";
             this.Load += new System.EventHandler(this.frmIngresos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).EndInit();

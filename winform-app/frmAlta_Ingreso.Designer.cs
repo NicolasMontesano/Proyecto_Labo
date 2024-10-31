@@ -126,12 +126,13 @@
             // 
             // btnIngreso
             // 
-            this.btnIngreso.Location = new System.Drawing.Point(44, 466);
+            this.btnIngreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnIngreso.Location = new System.Drawing.Point(440, 368);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(75, 23);
             this.btnIngreso.TabIndex = 9;
             this.btnIngreso.Text = "Ingreso";
-            this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // gbxIngreso
@@ -209,7 +210,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 511);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(550, 430);
             this.Controls.Add(this.cbxHoraSalida);
             this.Controls.Add(this.grbxSalida);
             this.Controls.Add(this.gbxIngreso);
@@ -217,7 +219,12 @@
             this.Controls.Add(this.cbxFechaManual);
             this.Controls.Add(this.txtDNIAlumno);
             this.Controls.Add(this.lblDNI);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(566, 469);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(566, 469);
             this.Name = "frmAlta_Ingreso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAlta_Ingreso";
             this.Load += new System.EventHandler(this.frmAlta_Ingreso_Load);
             this.gbxIngreso.ResumeLayout(false);
