@@ -58,7 +58,8 @@ namespace winform_app
                 if (alumno.idAlumno != 0)
                 {
 
-                    alumnoNegocio.Modificar(alumno);
+                    alumnoNegocio.Modificar(alumno, usuario);
+                  
                     MessageBox.Show("MODIFICADO EXITOSAMENTE :)");
                     this.Close();
 

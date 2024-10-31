@@ -181,17 +181,21 @@ namespace negocio
         }
 
 
-        public void Modificar(Alumno al)
+        public void Modificar(Alumno al, Usuario usu)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update Alumnos set  Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI where IdAlumno = @Idalumno");
+                //datos.setearConsulta("update Alumnos set  Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI where IdAlumno = @Idalumno");
+                datos.setearProcedimiento("sp_Modificar_Alumno_Usuario");
                 datos.setearParametro("@Nombre", al.Nombre);
                 datos.setearParametro("@Apellido", al.Apellido);
                 datos.setearParametro("@Idalumno", al.idAlumno);
                 // datos.setearParametro("@FechaNacimineto", al.FechaNacimiento);
                 datos.setearParametro("@DNI", al.DNI);
+                datos.setearParametro("@idUsuario", al.IdUsuario);
+                datos.setearParametro("@Usuario", usu.User);
+                datos.setearParametro("@Contraseña", usu.Pass);
 
                 datos.ejecutarAccion();
             }
