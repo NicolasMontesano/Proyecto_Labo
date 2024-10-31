@@ -14,6 +14,8 @@ namespace winform_app
 {
     public partial class frmClientes : Form
     {
+        private List<Alumno> alumnoList;
+
         public frmClientes()
         {
             InitializeComponent();
@@ -26,7 +28,8 @@ namespace winform_app
         public void cargarClientes()
         {
             AlumnoNegocio alNeg = new AlumnoNegocio();
-            dgvClientes.DataSource = alNeg.Listar();
+            alumnoList = alNeg.Listar();
+            dgvClientes.DataSource = alumnoList;
         }
         private void btnAgregarAlu_Click(object sender, EventArgs e)
         {
@@ -67,6 +70,30 @@ namespace winform_app
             frmAgregarAL modificar = new frmAgregarAL(alSeleccionado);
             modificar.ShowDialog();
             cargarClientes();
+        }
+
+        private void btnFiltroDni_Click(object sender, EventArgs e)
+        {
+
+            List<Alumno> FiltroAlDni; //no lo instancio porque lo de abajo me devuelve una lista
+
+            string FiltroDni = txtFiltroDni.Text;
+
+          if(FiltroDni != "")
+            {
+
+            FiltroAlDni = alumnoList.FindAll(x => x.DNI.ToLower().Contains(FiltroDni.ToLower()));
+
+            }
+            else
+            {
+                FiltroAlDni = alumnoList;
+            }
+
+
+            dgvClientes.DataSource = null; //limpio el datasource
+            dgvClientes.DataSource = FiltroAlDni; //lo cargo con mi lista filtrada
+
         }
     }
 }
