@@ -39,6 +39,8 @@
             this.txtFiltroNombreAl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFiltroApeAL = new System.Windows.Forms.TextBox();
+            this.btnFiltrarInactivos = new System.Windows.Forms.Button();
+            this.btnFiltrarActivos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 45;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(804, 245);
+            this.dgvClientes.Size = new System.Drawing.Size(729, 245);
             this.dgvClientes.TabIndex = 0;
             // 
             // btnAgregarAlu
@@ -109,7 +111,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(414, 385);
+            this.btnCancelar.Location = new System.Drawing.Point(664, 385);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 26);
             this.btnCancelar.TabIndex = 7;
@@ -153,12 +155,36 @@
             this.txtFiltroApeAL.TabIndex = 11;
             this.txtFiltroApeAL.TextChanged += new System.EventHandler(this.txtFiltroApeAL_TextChanged);
             // 
+            // btnFiltrarInactivos
+            // 
+            this.btnFiltrarInactivos.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFiltrarInactivos.Location = new System.Drawing.Point(779, 277);
+            this.btnFiltrarInactivos.Name = "btnFiltrarInactivos";
+            this.btnFiltrarInactivos.Size = new System.Drawing.Size(92, 32);
+            this.btnFiltrarInactivos.TabIndex = 12;
+            this.btnFiltrarInactivos.Text = "Filtrar Inactivos";
+            this.btnFiltrarInactivos.UseVisualStyleBackColor = false;
+            this.btnFiltrarInactivos.Click += new System.EventHandler(this.btnFiltrarInactivos_Click);
+            // 
+            // btnFiltrarActivos
+            // 
+            this.btnFiltrarActivos.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnFiltrarActivos.Location = new System.Drawing.Point(779, 176);
+            this.btnFiltrarActivos.Name = "btnFiltrarActivos";
+            this.btnFiltrarActivos.Size = new System.Drawing.Size(92, 32);
+            this.btnFiltrarActivos.TabIndex = 13;
+            this.btnFiltrarActivos.Text = "Filtrar Activos";
+            this.btnFiltrarActivos.UseVisualStyleBackColor = false;
+            this.btnFiltrarActivos.Click += new System.EventHandler(this.btnFiltrarActivos_Click);
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(883, 440);
+            this.Controls.Add(this.btnFiltrarActivos);
+            this.Controls.Add(this.btnFiltrarInactivos);
             this.Controls.Add(this.txtFiltroApeAL);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFiltroNombreAl);
@@ -197,5 +223,7 @@
         private System.Windows.Forms.TextBox txtFiltroNombreAl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFiltroApeAL;
+        private System.Windows.Forms.Button btnFiltrarInactivos;
+        private System.Windows.Forms.Button btnFiltrarActivos;
     }
 }

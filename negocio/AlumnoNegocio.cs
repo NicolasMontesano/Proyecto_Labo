@@ -48,7 +48,7 @@ namespace negocio
         public List<Alumno> Listar()
         {
             List<Alumno> listaAl = new List<Alumno>();
-            AccesoDatos datos = new AccesoDatos();  
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
@@ -86,17 +86,17 @@ namespace negocio
 
                     listaAl.Add(alumno);
                 }
-                    
-                    return listaAl;
+
+                return listaAl;
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
             finally
             {
-                    datos.cerrarConexion();
+                datos.cerrarConexion();
             }
 
         }
@@ -108,7 +108,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Creditos, Estado) VALUES ('"+ alu.Nombre +"', '"+ alu.Apellido +"', '"+alu.FechaNacimiento+"', '"+ alu.DNI + "', 4, 1, 1)");
+                datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Creditos, Estado) VALUES ('" + alu.Nombre + "', '" + alu.Apellido + "', '" + alu.FechaNacimiento + "', '" + alu.DNI + "', 4, 1, 1)");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -130,13 +130,13 @@ namespace negocio
             try
             {
                 datos.setearProcedimiento("SP_ALTA_ALUMNO");
-                datos.setearParametro("@Usuario",usu.User);
-                datos.setearParametro("@Contraseña",usu.Pass);
-                datos.setearParametro("@Nombre",alu.Nombre);
-                datos.setearParametro("@Apellido",alu.Apellido);
-                datos.setearParametro("@DNI",alu.DNI);
+                datos.setearParametro("@Usuario", usu.User);
+                datos.setearParametro("@Contraseña", usu.Pass);
+                datos.setearParametro("@Nombre", alu.Nombre);
+                datos.setearParametro("@Apellido", alu.Apellido);
+                datos.setearParametro("@DNI", alu.DNI);
                 //datos.setearParametro("@FechaNacimiento",alu.FechaNacimiento.ToString("yyyyMMdddd"));
-                datos.setearParametro("@FechaNacimiento",alu.FechaNacimiento);
+                datos.setearParametro("@FechaNacimiento", alu.FechaNacimiento);
 
                 datos.ejecutarAccion();
 
@@ -236,5 +236,99 @@ namespace negocio
             }
         }
 
+
+        public List<Alumno> ListarAlInactivos()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Alumno> listaInac = new List<Alumno>();
+
+            try
+            {
+                datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario, AL.Estado from Alumnos as AL where Estado = 0");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Alumno alumno = new Alumno();
+
+                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
+                    alumno.Nombre = (string)datos.Lector["Nombre"];
+                    alumno.Apellido = (string)datos.Lector["Apellido"];
+                    //alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+
+                    if (!Convert.IsDBNull(datos.Lector["FechaNacimiento"]))
+                    {
+                        alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+                    }
+
+
+                    alumno.DNI = (string)datos.Lector["DNI"];
+                    alumno.IdUsuario = (int)datos.Lector["IdUsuario"];
+                    alumno.Estado = (int)datos.Lector["Estado"];
+
+                    listaInac.Add(alumno);
+                }
+
+                return listaInac;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public List<Alumno> ListarAlActivos()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Alumno> listaInac = new List<Alumno>();
+
+            try
+            {
+                datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario, AL.Estado from Alumnos as AL where Estado = 1");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Alumno alumno = new Alumno();
+
+                    alumno.idAlumno = (int)datos.Lector["IdAlumno"];
+                    alumno.Nombre = (string)datos.Lector["Nombre"];
+                    alumno.Apellido = (string)datos.Lector["Apellido"];
+                    //alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+
+                    if (!Convert.IsDBNull(datos.Lector["FechaNacimiento"]))
+                    {
+                        alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+                    }
+
+
+                    alumno.DNI = (string)datos.Lector["DNI"];
+                    alumno.IdUsuario = (int)datos.Lector["IdUsuario"];
+                    alumno.Estado = (int)datos.Lector["Estado"];
+
+                    listaInac.Add(alumno);
+                }
+
+                return listaInac;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

@@ -14,8 +14,9 @@ namespace winform_app
 {
     public partial class frmClientes : Form
     {
-        private List<Alumno> alumnoList;
-
+        private List<Alumno> alumnoList;//lista todo
+        private List<Alumno> alumnoList2;//lista los inactivos
+        private List<Alumno> alumnoList3;//lista los activos
         public frmClientes()
         {
             InitializeComponent();
@@ -108,7 +109,7 @@ namespace winform_app
 
             string FiltroNombre = txtFiltroNombreAl.Text;
 
-            if (FiltroNombre != "")
+            if (FiltroNombre != "") //preguntar a los chicos si agrego un && de que si el boton de filtar inactivos se pulso
             {
 
                 FiltroNombreAL = alumnoList.FindAll(x => x.Nombre.ToLower().Contains(FiltroNombre.ToLower()));
@@ -144,6 +145,29 @@ namespace winform_app
 
             dgvClientes.DataSource = null; //limpio el datasource
             dgvClientes.DataSource = FiltroApeAl; //lo cargo con mi lista filtrada
+        }
+
+        public void cargarClientesInactivos()
+        {
+            AlumnoNegocio alNeg = new AlumnoNegocio();
+            alumnoList2 = alNeg.ListarAlInactivos();
+            dgvClientes.DataSource = alumnoList2;
+        }
+
+        private void btnFiltrarInactivos_Click(object sender, EventArgs e)
+        {
+            cargarClientesInactivos();
+        }
+        public void cargarClientesActivos()
+        {
+            AlumnoNegocio alNeg = new AlumnoNegocio();
+            alumnoList3 = alNeg.ListarAlActivos();
+            dgvClientes.DataSource = alumnoList3;
+        }
+
+        private void btnFiltrarActivos_Click(object sender, EventArgs e)
+        {
+            cargarClientesActivos();
         }
     }
 }
