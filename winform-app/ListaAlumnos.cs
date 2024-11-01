@@ -72,17 +72,24 @@ namespace winform_app
             cargarClientes();
         }
 
-        private void btnFiltroDni_Click(object sender, EventArgs e)
-        {
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+       
+
+        private void txtFiltroDni_TextChanged(object sender, EventArgs e)
+        {
             List<Alumno> FiltroAlDni; //no lo instancio porque lo de abajo me devuelve una lista
 
             string FiltroDni = txtFiltroDni.Text;
 
-          if(FiltroDni != "")
+            if (FiltroDni != "")
             {
 
-            FiltroAlDni = alumnoList.FindAll(x => x.DNI.ToLower().Contains(FiltroDni.ToLower()));
+                FiltroAlDni = alumnoList.FindAll(x => x.DNI.ToLower().Contains(FiltroDni.ToLower()));
 
             }
             else
@@ -93,12 +100,50 @@ namespace winform_app
 
             dgvClientes.DataSource = null; //limpio el datasource
             dgvClientes.DataSource = FiltroAlDni; //lo cargo con mi lista filtrada
-
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void txtFiltroNombreAl_TextChanged(object sender, EventArgs e)
         {
-            Close();
+            List<Alumno> FiltroNombreAL; //no lo instancio porque lo de abajo me devuelve una lista
+
+            string FiltroNombre = txtFiltroNombreAl.Text;
+
+            if (FiltroNombre != "")
+            {
+
+                FiltroNombreAL = alumnoList.FindAll(x => x.Nombre.ToLower().Contains(FiltroNombre.ToLower()));
+
+            }
+            else
+            {
+                FiltroNombreAL = alumnoList;
+            }
+
+
+            dgvClientes.DataSource = null; //limpio el datasource
+            dgvClientes.DataSource = FiltroNombreAL; //lo cargo con mi lista filtrada
+        }
+
+        private void txtFiltroApeAL_TextChanged(object sender, EventArgs e)
+        {
+            List<Alumno> FiltroApeAl; //no lo instancio porque lo de abajo me devuelve una lista
+
+            string FiltroApellido = txtFiltroApeAL.Text;
+
+            if (FiltroApellido != "")
+            {
+
+                FiltroApeAl = alumnoList.FindAll(x => x.Apellido.ToLower().Contains(FiltroApellido.ToLower()));
+
+            }
+            else
+            {
+                FiltroApeAl = alumnoList;
+            }
+
+
+            dgvClientes.DataSource = null; //limpio el datasource
+            dgvClientes.DataSource = FiltroApeAl; //lo cargo con mi lista filtrada
         }
     }
 }
