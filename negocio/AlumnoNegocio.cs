@@ -52,7 +52,6 @@ namespace negocio
 
             try
             {
-                
                 //datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario,AL.Creditos, AL.Estado from Alumnos as AL inner Join Usuarios As U on U.Id = AL.IdUsuario inner join TipoUsuarios as TU On TU.Id = U.Tipo Where TU.Id=4");
                 datos.setearConsulta("select AL.IdAlumno, AL.Nombre, AL.Apellido, AL.FechaNacimiento, AL.DNI, AL.IdUsuario, AL.Estado from Alumnos as AL ");
                 datos.ejecutarLectura();
@@ -87,24 +86,20 @@ namespace negocio
 
                     listaAl.Add(alumno);
                 }
-
                     
                     return listaAl;
             }
             catch (Exception ex)
             {
                 
-
                 throw ex;
             }
             finally
             {
                     datos.cerrarConexion();
-
             }
 
         }
-
 
         public void agregar(Alumno alu)
         {
@@ -115,14 +110,9 @@ namespace negocio
             {
                 datos.setearConsulta("INSERT INTO Alumnos (Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Creditos, Estado) VALUES ('"+ alu.Nombre +"', '"+ alu.Apellido +"', '"+alu.FechaNacimiento+"', '"+ alu.DNI + "', 4, 1, 1)");
                 datos.ejecutarAccion();
-
-
-
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally

@@ -33,15 +33,15 @@
             this.lblNacimiento = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreEmple = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtApellidoEmple = new System.Windows.Forms.TextBox();
+            this.txtDNIemple = new System.Windows.Forms.TextBox();
+            this.texUsuarioEmple = new System.Windows.Forms.TextBox();
+            this.texContraEmple = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.cbCatEmple = new System.Windows.Forms.ComboBox();
             this.dtpFechNacEmp = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -91,12 +91,12 @@
             this.lblTipo.TabIndex = 4;
             this.lblTipo.Text = "Categoria:";
             // 
-            // textBox1
+            // txtNombreEmple
             // 
-            this.textBox1.Location = new System.Drawing.Point(210, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNombreEmple.Location = new System.Drawing.Point(210, 39);
+            this.txtNombreEmple.Name = "txtNombreEmple";
+            this.txtNombreEmple.Size = new System.Drawing.Size(209, 20);
+            this.txtNombreEmple.TabIndex = 5;
             // 
             // btnAgregar
             // 
@@ -107,34 +107,35 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // textBox2
+            // txtApellidoEmple
             // 
-            this.textBox2.Location = new System.Drawing.Point(210, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtApellidoEmple.Location = new System.Drawing.Point(210, 79);
+            this.txtApellidoEmple.Name = "txtApellidoEmple";
+            this.txtApellidoEmple.Size = new System.Drawing.Size(209, 20);
+            this.txtApellidoEmple.TabIndex = 7;
             // 
-            // textBox3
+            // txtDNIemple
             // 
-            this.textBox3.Location = new System.Drawing.Point(210, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtDNIemple.Location = new System.Drawing.Point(210, 164);
+            this.txtDNIemple.Name = "txtDNIemple";
+            this.txtDNIemple.Size = new System.Drawing.Size(209, 20);
+            this.txtDNIemple.TabIndex = 8;
             // 
-            // textBox4
+            // texUsuarioEmple
             // 
-            this.textBox4.Location = new System.Drawing.Point(210, 201);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(209, 20);
-            this.textBox4.TabIndex = 9;
+            this.texUsuarioEmple.Location = new System.Drawing.Point(210, 201);
+            this.texUsuarioEmple.Name = "texUsuarioEmple";
+            this.texUsuarioEmple.Size = new System.Drawing.Size(209, 20);
+            this.texUsuarioEmple.TabIndex = 9;
             // 
-            // textBox5
+            // texContraEmple
             // 
-            this.textBox5.Location = new System.Drawing.Point(210, 234);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(209, 20);
-            this.textBox5.TabIndex = 10;
+            this.texContraEmple.Location = new System.Drawing.Point(210, 234);
+            this.texContraEmple.Name = "texContraEmple";
+            this.texContraEmple.Size = new System.Drawing.Size(209, 20);
+            this.texContraEmple.TabIndex = 10;
             // 
             // lblUsuario
             // 
@@ -154,13 +155,13 @@
             this.lblContra.TabIndex = 12;
             this.lblContra.Text = "Contraseña:";
             // 
-            // cbxCategoria
+            // cbCatEmple
             // 
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(210, 268);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(209, 21);
-            this.cbxCategoria.TabIndex = 13;
+            this.cbCatEmple.FormattingEnabled = true;
+            this.cbCatEmple.Location = new System.Drawing.Point(210, 268);
+            this.cbCatEmple.Name = "cbCatEmple";
+            this.cbCatEmple.Size = new System.Drawing.Size(209, 21);
+            this.cbCatEmple.TabIndex = 13;
             // 
             // dtpFechNacEmp
             // 
@@ -190,15 +191,15 @@
             this.ClientSize = new System.Drawing.Size(574, 371);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dtpFechNacEmp);
-            this.Controls.Add(this.cbxCategoria);
+            this.Controls.Add(this.cbCatEmple);
             this.Controls.Add(this.lblContra);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.texContraEmple);
+            this.Controls.Add(this.texUsuarioEmple);
+            this.Controls.Add(this.txtDNIemple);
+            this.Controls.Add(this.txtApellidoEmple);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreEmple);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.lblNacimiento);
@@ -211,6 +212,7 @@
             this.Name = "AgregarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarEmpleado";
+            this.Load += new System.EventHandler(this.AgregarEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,15 +225,15 @@
         private System.Windows.Forms.Label lblNacimiento;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreEmple;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtApellidoEmple;
+        private System.Windows.Forms.TextBox txtDNIemple;
+        private System.Windows.Forms.TextBox texUsuarioEmple;
+        private System.Windows.Forms.TextBox texContraEmple;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContra;
-        private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.ComboBox cbCatEmple;
         private System.Windows.Forms.DateTimePicker dtpFechNacEmp;
         private System.Windows.Forms.Button btnCancelar;
     }

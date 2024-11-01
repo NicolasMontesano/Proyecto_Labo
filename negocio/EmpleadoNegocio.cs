@@ -31,15 +31,57 @@ namespace negocio
                     emp.Activo = (int)datos.Lector["Activo"];
 
                     //emp.IdUsuario = (int)datos.Lector["IdUsuario"];
-
-
                 }
-
                 return emp;
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public void agregar(Empleado emple)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO Empleados(Nombre, Apellido, FechaNacimiento, DNI, IdUsuario) VALUES  ('" + emple.Nombre + "', '" + emple.Apellido + "', '" + emple.FechaNacimiento + "', '" + emple.DNI + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void agregar_Sp(Empleado emple, Usuario usu)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+               // datos.setearProcedimiento("SP_ALTA_ALUMNO");
+                datos.setearParametro("@Usuario", usu.User);
+                datos.setearParametro("@Contraseña", usu.Pass);
+                datos.setearParametro("@Nombre", emple.Nombre);
+                datos.setearParametro("@Apellido", emple.Apellido);
+                datos.setearParametro("@DNI", emple.DNI);
+                datos.setearParametro("@FechaNacimiento", emple.FechaNacimiento);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }

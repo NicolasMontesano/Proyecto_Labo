@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using negocio;
 
 
-
 namespace winform_app
 {
     public partial class frmAgregarAL : Form

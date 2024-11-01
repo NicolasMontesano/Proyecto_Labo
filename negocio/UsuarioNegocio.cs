@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using dominio;
 
@@ -10,6 +11,38 @@ namespace negocio
 {
     public class UsuarioNegocio
     {
+        public List<TipoUsuario> listar()
+        {
+            List<TipoUsuario> lista = new List<TipoUsuario>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT Id, Descripcion FROM TipoUsuarios");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    TipoUsuario cate = new TipoUsuario
+                    {
+                        Id = (int)datos.Lector["Id"],
+                        Descripcion = (string)datos.Lector["Descripcion"]
+                    };
+
+                    lista.Add(cate);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public Usuario Login(string User, string Pass)
         {
 			AccesoDatos datos = new AccesoDatos();
@@ -59,8 +92,6 @@ namespace negocio
 			{
 				datos.cerrarConexion();
 			}
-
-
 		}
 
         public Usuario ObtenerUsuario(int idUsuario)
@@ -90,7 +121,6 @@ namespace negocio
                 throw ex;
             }
         }
-
 
     }
 }
