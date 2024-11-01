@@ -40,6 +40,53 @@ namespace negocio
             }
         }
 
+        public List<Empleado> Listar()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Empleado> listEmpleado = new List<Empleado>();
+
+            try
+            {
+                datos.setearConsulta("select IdEmpleado, Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Activo from Empleados");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Empleado empleado = new Empleado();
+
+                    empleado.Id = (int)datos.Lector["IdEmpleado"];
+                    empleado.Nombre = (string)datos.Lector["Nombre"];
+                    empleado.Apellido = (string)datos.Lector["Apellido"];
+                    empleado.DNI = (string)datos.Lector["DNI"];
+                    empleado.IdUsuario = (int)datos.Lector["IdUsuario"];
+                    empleado.Activo = (int)datos.Lector["Activo"];
+
+                    if (!Convert.IsDBNull(datos.Lector["FechaNacimiento"]))
+                    {
+                        empleado.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+                    }
+
+                    listEmpleado.Add(empleado);
+
+                }
+
+                return listEmpleado;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex ;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
+
         public void agregar(Empleado emple)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -84,5 +131,26 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+
+        public void eliminarEmpleado(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("update Empleados set Activo = 0 Where IdEmpleado = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
     }
 }

@@ -31,6 +31,7 @@ namespace winform_app
             AlumnoNegocio alNeg = new AlumnoNegocio();
             alumnoList = alNeg.Listar();
             dgvClientes.DataSource = alumnoList;
+            dgvClientes.Columns["Estado"].Visible = false;
         }
         private void btnAgregarAlu_Click(object sender, EventArgs e)
         {
@@ -152,6 +153,7 @@ namespace winform_app
             AlumnoNegocio alNeg = new AlumnoNegocio();
             alumnoList2 = alNeg.ListarAlInactivos();
             dgvClientes.DataSource = alumnoList2;
+            dgvClientes.Columns["Estado"].Visible = false;
         }
 
         private void btnFiltrarInactivos_Click(object sender, EventArgs e)
@@ -163,6 +165,8 @@ namespace winform_app
             AlumnoNegocio alNeg = new AlumnoNegocio();
             alumnoList3 = alNeg.ListarAlActivos();
             dgvClientes.DataSource = alumnoList3;
+            dgvClientes.Columns["Estado"].Visible = false;
+            
         }
 
         private void btnFiltrarActivos_Click(object sender, EventArgs e)
