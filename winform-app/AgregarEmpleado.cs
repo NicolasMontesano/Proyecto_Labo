@@ -30,6 +30,7 @@ namespace winform_app
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            Usuario usu = new Usuario();
             EmpleadoNegocio EmpleNegocio = new EmpleadoNegocio();
 
             try
@@ -37,11 +38,12 @@ namespace winform_app
                 if (emple == null)
                     emple = new Empleado();
 
-
                 emple.Nombre = txtNombreEmple.Text;
                 emple.Apellido = txtApellidoEmple.Text;
-                //emple.FechaNacimiento=
+                emple.FechaNacimiento = dtpFechNacEmp.Value;
                 emple.DNI = txtDNIemple.Text;
+                usu.User = txtUsuarioEmple.Text;
+                usu.Pass = txtContraEmple.Text;
 
                 if (cbCatEmple.SelectedIndex < 0)
                 {
@@ -55,13 +57,13 @@ namespace winform_app
 
                 if (emple.Id != 0)
                 {
-                   // EmpleNegocio.modificar(emple);
-                   //MessageBox.Show("Empleado modificado correctamente");
+                    // EmpleNegocio.modificar(emple);
+                    //MessageBox.Show("Empleado modificado correctamente");
 
                 }
                 else
                 {
-                    EmpleNegocio.agregar(emple);
+                    EmpleNegocio.agregar_Sp(emple, usu);
                     MessageBox.Show("Empleado agregado correctamente");
                 }
 

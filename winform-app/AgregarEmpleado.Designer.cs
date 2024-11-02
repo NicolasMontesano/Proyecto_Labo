@@ -37,8 +37,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtApellidoEmple = new System.Windows.Forms.TextBox();
             this.txtDNIemple = new System.Windows.Forms.TextBox();
-            this.texUsuarioEmple = new System.Windows.Forms.TextBox();
-            this.texContraEmple = new System.Windows.Forms.TextBox();
+            this.txtUsuarioEmple = new System.Windows.Forms.TextBox();
+            this.txtContraEmple = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();
             this.cbCatEmple = new System.Windows.Forms.ComboBox();
@@ -123,19 +123,19 @@
             this.txtDNIemple.Size = new System.Drawing.Size(209, 20);
             this.txtDNIemple.TabIndex = 8;
             // 
-            // texUsuarioEmple
+            // txtUsuarioEmple
             // 
-            this.texUsuarioEmple.Location = new System.Drawing.Point(210, 201);
-            this.texUsuarioEmple.Name = "texUsuarioEmple";
-            this.texUsuarioEmple.Size = new System.Drawing.Size(209, 20);
-            this.texUsuarioEmple.TabIndex = 9;
+            this.txtUsuarioEmple.Location = new System.Drawing.Point(210, 201);
+            this.txtUsuarioEmple.Name = "txtUsuarioEmple";
+            this.txtUsuarioEmple.Size = new System.Drawing.Size(209, 20);
+            this.txtUsuarioEmple.TabIndex = 9;
             // 
-            // texContraEmple
+            // txtContraEmple
             // 
-            this.texContraEmple.Location = new System.Drawing.Point(210, 234);
-            this.texContraEmple.Name = "texContraEmple";
-            this.texContraEmple.Size = new System.Drawing.Size(209, 20);
-            this.texContraEmple.TabIndex = 10;
+            this.txtContraEmple.Location = new System.Drawing.Point(210, 234);
+            this.txtContraEmple.Name = "txtContraEmple";
+            this.txtContraEmple.Size = new System.Drawing.Size(209, 20);
+            this.txtContraEmple.TabIndex = 10;
             // 
             // lblUsuario
             // 
@@ -194,8 +194,8 @@
             this.Controls.Add(this.cbCatEmple);
             this.Controls.Add(this.lblContra);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.texContraEmple);
-            this.Controls.Add(this.texUsuarioEmple);
+            this.Controls.Add(this.txtContraEmple);
+            this.Controls.Add(this.txtUsuarioEmple);
             this.Controls.Add(this.txtDNIemple);
             this.Controls.Add(this.txtApellidoEmple);
             this.Controls.Add(this.btnAgregar);
@@ -229,8 +229,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtApellidoEmple;
         private System.Windows.Forms.TextBox txtDNIemple;
-        private System.Windows.Forms.TextBox texUsuarioEmple;
-        private System.Windows.Forms.TextBox texContraEmple;
+        private System.Windows.Forms.TextBox txtUsuarioEmple;
+        private System.Windows.Forms.TextBox txtContraEmple;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.ComboBox cbCatEmple;

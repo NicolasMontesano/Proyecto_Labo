@@ -119,12 +119,9 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-
         }
-
         public void agregar_Sp(Alumno alu, Usuario usu)
         {
-
             AccesoDatos datos = new AccesoDatos();
 
             try
@@ -135,18 +132,12 @@ namespace negocio
                 datos.setearParametro("@Nombre", alu.Nombre);
                 datos.setearParametro("@Apellido", alu.Apellido);
                 datos.setearParametro("@DNI", alu.DNI);
-                //datos.setearParametro("@FechaNacimiento",alu.FechaNacimiento.ToString("yyyyMMdddd"));
                 datos.setearParametro("@FechaNacimiento", alu.FechaNacimiento);
 
                 datos.ejecutarAccion();
-
-
-
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -231,7 +222,6 @@ namespace negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

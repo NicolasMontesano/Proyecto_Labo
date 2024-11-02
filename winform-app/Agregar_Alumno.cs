@@ -44,7 +44,6 @@ namespace winform_app
                 if (alumno == null)
                     alumno = new Alumno();
 
-
                 alumno.Nombre = txtNombre.Text;
                 alumno.Apellido = txtApellido.Text;
                 alumno.FechaNacimiento = dtpFechNacAl.Value;
@@ -52,15 +51,12 @@ namespace winform_app
                 usuario.User = txtUsserAl.Text;
                 usuario.Pass = txtPassUsu.Text;
 
-
                 if (alumno.idAlumno != 0)
                 {
 
                     alumnoNegocio.Modificar(alumno, usuario);
                   
                     MessageBox.Show("MODIFICADO EXITOSAMENTE :)");
-                    this.Close();
-
                 }
                 else
                 {
@@ -69,10 +65,9 @@ namespace winform_app
                     //usuarioNegocio.agregar(usuario);
 
                     MessageBox.Show("Agregado Exitosamente :D");
-                    this.Close();
-
                 }
 
+                Close();
             }
             catch (Exception ex)
             {

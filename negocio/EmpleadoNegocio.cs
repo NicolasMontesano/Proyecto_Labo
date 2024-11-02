@@ -82,10 +82,7 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-
-
         }
-
 
         public void agregar(Empleado emple)
         {
@@ -112,7 +109,7 @@ namespace negocio
 
             try
             {
-               // datos.setearProcedimiento("SP_ALTA_ALUMNO");
+                datos.setearProcedimiento("SP_ALTA_EMPLEADO");
                 datos.setearParametro("@Usuario", usu.User);
                 datos.setearParametro("@Contraseña", usu.Pass);
                 datos.setearParametro("@Nombre", emple.Nombre);
@@ -131,7 +128,6 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
 
         public void eliminarEmpleado(int id)
         {
