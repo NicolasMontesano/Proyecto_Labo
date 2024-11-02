@@ -161,7 +161,6 @@ namespace negocio
             }
         }
 
-
         public void Modificar(Alumno al, Usuario usu)
         {
             AccesoDatos datos = new AccesoDatos();

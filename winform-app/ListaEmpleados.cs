@@ -60,5 +60,14 @@ namespace winform_app
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Empleado seleccionado;
+
+            seleccionado = (Empleado)dgvEmpleados.CurrentRow.DataBoundItem;
+
+            AgregarEmpleado modifico = new AgregarEmpleado();
+            modifico.ShowDialog();
+        }
     }
 }

@@ -11,22 +11,23 @@ namespace negocio
 {
     public class UsuarioNegocio
     {
-        public List<TipoUsuario> listar()
+        public List<Usuario> listar()
         {
-            List<TipoUsuario> lista = new List<TipoUsuario>();
+            List<Usuario> lista = new List<Usuario>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("SELECT Id, Descripcion FROM TipoUsuarios");
+                datos.setearConsulta("SELECT Id, Tipo FROM Usuarios");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    TipoUsuario cate = new TipoUsuario
+                    Usuario cate = new Usuario
                     {
                         Id = (int)datos.Lector["Id"],
-                        Descripcion = (string)datos.Lector["Descripcion"]
+                        TipoUsuario = (int)datos.Lector["Tipo"],
+                        //Descripcion = (string)datos.Lector["Descripcion"]
                     };
 
                     lista.Add(cate);

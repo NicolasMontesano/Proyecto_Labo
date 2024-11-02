@@ -150,3 +150,9 @@ select *from TipoUsuarios
 select *from Empleados
 
 insert into Empleados (Nombre,Apellido,DNI,IdUsuario,Activo) values('Administrador','Administrador','00000000',1,1)
+
+insert into Empleados (Nombre,Apellido,DNI,IdUsuario,Activo) values('cande','can','11111111',1,1)
+
+insert into Usuarios (Usuario,Contraseña,Tipo) values('cand','can',2)
+
+SELECT Id, Tipo FROM Usuarios

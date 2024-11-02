@@ -129,6 +129,34 @@ namespace negocio
             }
         }
 
+        public void Modificar(Empleado emple, Usuario usu)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearProcedimiento("sp_Modificar_Empleado_Usuario");
+                datos.setearParametro("@Nombre", emple.Nombre);
+                datos.setearParametro("@Apellido", emple.Apellido);
+                datos.setearParametro("@Idalumno", emple.Id);
+                datos.setearParametro("@Fecha", emple.FechaNacimiento);
+                datos.setearParametro("@DNI", emple.DNI);
+                datos.setearParametro("@idUsuario", emple.IdUsuario);
+                datos.setearParametro("@Usuario", usu.User);
+                datos.setearParametro("@Contraseña", usu.Pass);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void eliminarEmpleado(int id)
         {
             try
@@ -143,10 +171,5 @@ namespace negocio
                 throw ex;
             }
         }
-
-
-
-
-
     }
 }

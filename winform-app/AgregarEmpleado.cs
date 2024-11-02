@@ -47,12 +47,12 @@ namespace winform_app
 
                 if (cbCatEmple.SelectedIndex < 0)
                 {
-                    MessageBox.Show("Seleccione una marca por favor");
+                    MessageBox.Show("Seleccione una categoria por favor");
                     return;
                 }
                 else
                 {
-                    emple.usuario.TipoUsuario = ((TipoUsuario)cbCatEmple.SelectedItem).Id;
+                    emple.usuario.TipoUsuario = ((Usuario)cbCatEmple.SelectedItem).Id;
                 }
 
                 if (emple.Id != 0)
@@ -77,14 +77,12 @@ namespace winform_app
 
         private void AgregarEmpleado_Load(object sender, EventArgs e)
         {
-            /*
-            TipoUsuario cat = new TipoUsuario();
+            UsuarioNegocio cat = new UsuarioNegocio();
 
-            cbCatEmple.DataSource = cat.
+            cbCatEmple.DataSource = cat.listar();
             cbCatEmple.ValueMember = "Id";
-            cbCatEmple.DisplayMember = "Descripcion";
+            cbCatEmple.DisplayMember = "Tipo";
             cbCatEmple.SelectedIndex = -1;
-            */
         }
     }
 }
