@@ -65,7 +65,7 @@ namespace winform_app
                         this.Hide();
                         frmIngreso.Show();
                     }
-                    MessageBox.Show("Usuario inactivo");
+                    else MessageBox.Show("Usuario inactivo");
                 }
                 else
                 {
@@ -76,12 +76,19 @@ namespace winform_app
                     emp.usuario = new Usuario();
                     emp.usuario = usu;
 
+                    if (emp.Id == 0)
+                    {
+                        MessageBox.Show("No se encontró empleado");
+                        return;
+                    }
+
                     if(emp.Activo == 1)
                     {
                         this.Hide();
                         frmPanel_Gestion ventGestion = new frmPanel_Gestion(emp);
                         ventGestion.Show();
                     }
+                    else MessageBox.Show("Usuario inactivo");
                 }
             }
             catch (Exception ex)
