@@ -171,5 +171,114 @@ namespace negocio
                 throw ex;
             }
         }
+
+        public List<Empleado> Filtrar(string campo, string criterio, string filtro)
+        {
+            AccesoDatos datos =new AccesoDatos();   
+            List<Empleado> lista = new List<Empleado>();
+
+            try
+            {
+                string consulta = "select IdEmpleado, Nombre, Apellido, FechaNacimiento, DNI, IdUsuario, Activo from Empleados Where  ";
+
+                switch (campo)
+                {
+                    case "Profesor":
+
+                        switch (criterio)
+                        {
+                            case "Nombre":
+                                consulta += "Nombre Like '" + filtro + "' ";
+                            break;
+
+                            case "Apellido":
+                                consulta += "Apellido Like '"+ filtro +"'";
+                                break;
+
+                            case "DNI":
+                                consulta += "DNI Like '"+ filtro+ "' ";
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+                    case "Recepcionista":
+                        switch (criterio)
+                        {
+                            case "Nombre":
+                                consulta += "Nombre Like '" + filtro + "' ";
+                                break;
+
+                            case "Apellido":
+                                consulta += "Apellido Like '" + filtro + "'";
+                                break;
+
+                            case "DNI":
+                                consulta += "DNI Like '" + filtro + "' ";
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    case "Admin":
+                        switch (criterio)
+                        {
+                            case "Nombre":
+                                consulta += "Nombre Like '" + filtro + "' ";
+                                break;
+
+                            case "Apellido":
+                                consulta += "Apellido Like '" + filtro + "'";
+                                break;
+
+                            case "DNI":
+                                consulta += "DNI Like '" + filtro + "' ";
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Empleado empleado = new Empleado();
+
+                    empleado.Id = (int)datos.Lector["IdEmpleado"];
+                    empleado.Nombre = (string)datos.Lector["Nombre"];
+                    empleado.Apellido = (string)datos.Lector["Apellido"];
+                    empleado.DNI = (string)datos.Lector["DNI"];
+                    empleado.IdUsuario = (int)datos.Lector["IdUsuario"];
+                    empleado.Activo = (int)datos.Lector["Activo"];
+
+                    if (!Convert.IsDBNull(datos.Lector["FechaNacimiento"]))
+                    {
+                        empleado.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
+                    }
+
+                    lista.Add(empleado);
+                }
+
+                    return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
+        }
     }
 }

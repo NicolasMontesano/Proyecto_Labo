@@ -37,6 +37,14 @@ namespace winform_app
         private void ListaEmpleados_Load(object sender, EventArgs e)
         {
             cargarEmpleados();
+            //CArgo el Cbo de campo
+            cboCampo.Items.Add("Profesor");
+            cboCampo.Items.Add("Recepcionista");
+            cboCampo.Items.Add("Admin");
+            //cargo el cbo de criterio
+            cboCriterio.Items.Add("Nombre");
+            cboCriterio.Items.Add("Apellido");
+            cboCriterio.Items.Add("DNI");
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -68,6 +76,32 @@ namespace winform_app
 
             AgregarEmpleado modifico = new AgregarEmpleado();
             modifico.ShowDialog();
+        }
+
+        private void btnBuscarBD_Click(object sender, EventArgs e)
+        {
+            EmpleadoNegocio empleadoNegocio = new EmpleadoNegocio();    
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();    
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+
+                dgvEmpleados.DataSource = empleadoNegocio.Filtrar(campo, criterio, filtro);
+
+                if(txtFiltroAvanzado.Text == "")  //si la txt Esta vacia Carga todo de nuevo
+                {
+                    cargarEmpleados();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
