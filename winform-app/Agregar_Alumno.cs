@@ -87,7 +87,7 @@ namespace winform_app
                     txtNombre.Text = alumno.Nombre;
                     txtApellido.Text = alumno.Apellido;
                     txtDniAl.Text = alumno.DNI;
-                    ///dtpFechNacAl.Value = alumno.FechaNacimiento;
+                    dtpFechNacAl.Value = alumno.FechaNacimiento;
                     //txtUsserAl.Visible = false;
                     //txtPassUsu.Visible = false;
                     //lblContrasñaAl.Visible = false;
