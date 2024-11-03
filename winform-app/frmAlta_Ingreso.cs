@@ -14,9 +14,15 @@ namespace winform_app
 {
     public partial class frmAlta_Ingreso : Form
     {
+        int idEmpleado = 0;
         public frmAlta_Ingreso()
         {
             InitializeComponent();
+        }
+        public frmAlta_Ingreso(int idEmpleado)
+        {
+            InitializeComponent();
+            this.idEmpleado = idEmpleado;
         }
 
         private void cbxFechaManual_CheckedChanged(object sender, EventArgs e)
@@ -90,6 +96,12 @@ namespace winform_app
                     return;
                 }
 
+                if(alumno.Estado != 1)
+                {
+                    MessageBox.Show("El alumno " + alumno.Nombre + " " + alumno.Apellido + " se encuentra dado de baja");
+                    return;
+                }
+
                 DateTime fecha = DateTime.Now;
 
                 if (cbxFechaManual.Checked)
@@ -154,7 +166,7 @@ namespace winform_app
 
                     }
 
-                    ingresoNegocio.AgregarAsistencia(fecha, fechaSalida, alumno.idAlumno, 1);//falta pasarle idEmpleado
+                    ingresoNegocio.AgregarAsistencia(fecha, fechaSalida, alumno.idAlumno, idEmpleado);//falta pasarle idEmpleado
                 }
 
 

@@ -15,16 +15,22 @@ namespace winform_app
     public partial class frmIngresos : Form
     {
         private List<Ingreso> listaIngreso;
+        private int idEmpleado = 0;
         public frmIngresos()
         {
             InitializeComponent();
+        }
+        public frmIngresos(int idEmpleado)
+        {
+            InitializeComponent();
+            this.idEmpleado = idEmpleado;
         }
 
         private void frmIngresos_Load(object sender, EventArgs e)
         {
             try
             {
-
+                cargarDatos();
             }
             catch (Exception ex)
             {
@@ -50,10 +56,20 @@ namespace winform_app
         {
             string filtro = "";
             if(txtFiltro != null && txtFiltro.Text.Trim() != "") filtro = txtFiltro.Text.Trim();
-            int hDesde = Convert.ToInt32(cboHoraDesde.SelectedItem.ToString());
-            int hHasta = Convert.ToInt32(cboHoraHasta.SelectedItem.ToString());
-            int mDesde = Convert.ToInt32(cboMinutosDesde.SelectedItem.ToString());
-            int mHasta = Convert.ToInt32(cboMinutosHasta.SelectedItem.ToString());
+            //int hDesde = Convert.ToInt32(cboHoraDesde.SelectedItem.ToString());
+            //int hHasta = Convert.ToInt32(cboHoraHasta.SelectedItem.ToString());
+            //int mDesde = Convert.ToInt32(cboMinutosDesde.SelectedItem.ToString());
+            //int mHasta = Convert.ToInt32(cboMinutosHasta.SelectedItem.ToString());
+
+            int hDesde = 0;
+            int hHasta = 23;
+            int mDesde = 0;
+            int mHasta = 60;
+
+            if(cboHoraDesde.SelectedItem != null) hDesde = Convert.ToInt32(cboHoraDesde.SelectedItem.ToString());
+            if (cboHoraHasta.SelectedItem != null) hHasta = Convert.ToInt32(cboHoraHasta.SelectedItem.ToString());
+            if (cboMinutosDesde.SelectedItem!= null) mDesde = Convert.ToInt32(cboMinutosDesde.SelectedItem.ToString());
+            if (cboMinutosHasta.SelectedItem!= null) mHasta = Convert.ToInt32(cboMinutosHasta.SelectedItem.ToString());
 
             try
             {
@@ -73,7 +89,7 @@ namespace winform_app
         {
             dgvIngresos.Columns["IdAsistencia"].Visible = false;
             dgvIngresos.Columns["IdAlumno"].Visible = false;
-            dgvIngresos.Columns["IdEmpleado"].Visible = false;
+            dgvIngresos.Columns["IdRecepcionista"].Visible = false;
         }
         public void cargarCbosHora()
         {
@@ -100,7 +116,8 @@ namespace winform_app
 
         private void btnNuevoIngreso_Click(object sender, EventArgs e)
         {
-
+            frmAlta_Ingreso frmAltaIngr = new frmAlta_Ingreso(idEmpleado);
+            frmAltaIngr.ShowDialog();
         }
     }
 }
