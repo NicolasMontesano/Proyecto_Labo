@@ -197,7 +197,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select IdAlumno,Nombre,Apellido,FechaNacimiento,DNI,IdUsuario,Creditos,Estado from alumnos where DNI = @DNI");
+                datos.setearConsulta("select IdAlumno,Nombre,Apellido,FechaNacimiento,DNI,IdUsuario,Estado from alumnos where DNI = @DNI");
                 datos.setearParametro("@DNI", DNI);
                 datos.ejecutarLectura();
 
@@ -206,7 +206,7 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     alumno.idAlumno = (int)datos.Lector["IdAlumno"];
-                    alumno.Nombre = (string)datos.Lector["Usuario"];
+                    alumno.Nombre = (string)datos.Lector["Nombre"];
                     alumno.Apellido = (string)datos.Lector["Apellido"];
                     alumno.FechaNacimiento = (DateTime)datos.Lector["FechaNacimiento"];
                     alumno.DNI = (string)datos.Lector["DNI"];

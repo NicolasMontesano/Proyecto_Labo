@@ -54,21 +54,48 @@ namespace negocio
 			{
 				datos.cerrarConexion();
 			}
-        } 
-		public void AgregarAsistencia(DateTime fechaDesde,DateTime fechaHasta , int idAlumno,  int idEmpleado)
+        }
+        public void AgregarAsistencia(DateTime fechaDesde, DateTime fechaHasta, int idAlumno, int idEmpleado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Ingreso> listar = new List<Ingreso>();
+
+            try
+            {
+                datos.setearProcedimiento("AgregarAsistencia");
+                datos.setearParametro("@IdAlumno", idAlumno);
+                datos.setearParametro("@IdEmpleado", idEmpleado);
+                datos.setearParametro("@FechaEntrada", fechaDesde);
+                datos.setearParametro("@FechaSalida", fechaHasta);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void AgregarAsistencia(DateTime fechaDesde , int idAlumno,  int idEmpleado)
         {
 			AccesoDatos datos = new AccesoDatos();
 			List<Ingreso> listar = new List<Ingreso>();
 
 			try
 			{
-				datos.setearProcedimiento("spListarIngreso");
+				datos.setearProcedimiento("AgregarAsistencia");
 				datos.setearParametro("@IdAlumno", idAlumno);
 				datos.setearParametro("@IdEmpleado", idEmpleado);
 				datos.setearParametro("@FechaEntrada", fechaDesde);
-				datos.setearParametro("@FechaSalida", fechaHasta);
+				datos.setearParametro("@FechaSalida", DBNull.Value);
 
-                datos.ejecutarAccion();
+				datos.ejecutarAccion();
 
 
             }
@@ -81,6 +108,32 @@ namespace negocio
 			{
 				datos.cerrarConexion();
 			}
+        }
+
+		public void cargarEgreso(DateTime FechaEgreso,int id)
+		{
+            AccesoDatos datos = new AccesoDatos();
+            List<Ingreso> listar = new List<Ingreso>();
+
+            try
+            {
+                datos.setearProcedimiento("AgregarEgresoAsistencia");
+                datos.setearParametro("@FechaSalida", FechaEgreso);
+                datos.setearParametro("@Id", id);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }
