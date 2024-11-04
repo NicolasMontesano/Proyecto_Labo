@@ -71,7 +71,7 @@ namespace winform_app
         private void btnIngreso_Click(object sender, EventArgs e)
         {
 
-            if (soloNumeros(txtDNIAlumno.Text))
+            if (!soloNumeros(txtDNIAlumno.Text))
             {
                 MessageBox.Show("Solo Números");
                 return;
@@ -106,12 +106,12 @@ namespace winform_app
 
                 if (cbxFechaManual.Checked)
                 {
-                    if (txtHora.Text.Trim() == "" || soloNumeros(txtHora.Text) || txtHora.Text.Length > 2 || Convert.ToInt32(txtHora.Text) > 23 || Convert.ToInt32(txtHora.Text) < 0)
+                    if (txtHora.Text.Trim() == "" || !soloNumeros(txtHora.Text) || txtHora.Text.Length > 2 || Convert.ToInt32(txtHora.Text) > 23 || Convert.ToInt32(txtHora.Text) < 0)
                     {
                         MessageBox.Show("Hora inválida");
                         return;
                     }
-                    else if (txtMinutos.Text.Trim() == "" || soloNumeros(txtMinutos.Text) || txtMinutos.Text.Length > 2 || Convert.ToInt32(txtMinutos.Text) > 59 || Convert.ToInt32(txtMinutos.Text) < 0)
+                    else if (txtMinutos.Text.Trim() == "" || !soloNumeros(txtMinutos.Text) || txtMinutos.Text.Length > 2 || Convert.ToInt32(txtMinutos.Text) > 59 || Convert.ToInt32(txtMinutos.Text) < 0)
                     {
                         MessageBox.Show("Minutos inválidos");
                         return;
@@ -134,12 +134,12 @@ namespace winform_app
 
                     if (cbxHoraSalida.Checked)
                     {
-                        if (txtHoraSalida.Text.Trim() == "" || soloNumeros(txtHoraSalida.Text) || txtHoraSalida.Text.Length > 2 || Convert.ToInt32(txtHoraSalida.Text) > 23 || Convert.ToInt32(txtHoraSalida.Text) < 0)
+                        if (txtHoraSalida.Text.Trim() == "" || !soloNumeros(txtHoraSalida.Text) || txtHoraSalida.Text.Length > 2 || Convert.ToInt32(txtHoraSalida.Text) > 23 || Convert.ToInt32(txtHoraSalida.Text) < 0)
                         {
                             MessageBox.Show("Hora inválida");
                             return;
                         }
-                        else if (txtMinutosSalida.Text.Trim() == "" || soloNumeros(txtMinutosSalida.Text) || txtMinutosSalida.Text.Length > 2 || Convert.ToInt32(txtMinutosSalida.Text) > 59 || Convert.ToInt32(txtMinutosSalida.Text) < 0)
+                        else if (txtMinutosSalida.Text.Trim() == "" || !soloNumeros(txtMinutosSalida.Text) || txtMinutosSalida.Text.Length > 2 || Convert.ToInt32(txtMinutosSalida.Text) > 59 || Convert.ToInt32(txtMinutosSalida.Text) < 0)
                         {
                             MessageBox.Show("Minutos inválidos");
                             return;
@@ -156,7 +156,9 @@ namespace winform_app
                             return;
                         }
 
-                        fechaSalida = new DateTime(fecha.Year, fecha.Month, fecha.Day, horas, minutos, fecha.Second);
+                        int horasSalida = int.Parse(txtHoraSalida.Text);
+                        int minutosSalida = int.Parse(txtMinutosSalida.Text);
+                        fechaSalida = new DateTime(fecha.Year, fecha.Month, fecha.Day, horasSalida, minutosSalida, fecha.Second);
 
                         if (fechaSalida > DateTime.Now)
                         {
@@ -166,10 +168,13 @@ namespace winform_app
 
                     }
 
+
                     ingresoNegocio.AgregarAsistencia(fecha, fechaSalida, alumno.idAlumno, idEmpleado);//falta pasarle idEmpleado
                 }
+                
+                ingresoNegocio.AgregarAsistencia(fecha,alumno.idAlumno, idEmpleado);
 
-
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -180,14 +185,36 @@ namespace winform_app
 
         private void frmAlta_Ingreso_Load(object sender, EventArgs e)
         {
+            lblHoraSalida.Visible = false;
+            lblMinutosSalida.Visible = false;
+            txtHoraSalida.Visible = false;
+            txtHoraSalida.Text = "";
+            txtMinutosSalida.Visible = false;
+            txtMinutosSalida.Text = "";
+
+            grbxSalida.Visible = false;
+
+
+            lblFecha.Visible = false;
+            lblHora.Visible = false;
+            lblMinutos.Visible = false;
+            txtHora.Visible = false;
+            txtHora.Text = "";
+            txtMinutos.Visible = false;
+            txtMinutos.Text = "";
+            dtpFechaIngreso.Visible = false;
+            dtpFechaIngreso.Value = DateTime.Now;
+            cbxHoraSalida.Visible = false;
+            gbxIngreso.Visible = false;
 
         }
 
         private void cbxHoraSalida_CheckedChanged(object sender, EventArgs e)
         {
-
-            if (cbxFechaManual.Checked)
+            
+            if (cbxHoraSalida.Checked)
             {
+                grbxSalida.Visible = true;
                 lblHoraSalida.Visible = true;
                 lblMinutosSalida.Visible = true;
                 txtHoraSalida.Visible = true;

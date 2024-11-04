@@ -44,7 +44,9 @@ namespace winform_app
             {
                 cargarCbosHora();
                 cargarCbosMinutos();
+                dtpFiltro.Value = DateTime.Now;
                 cargarGrilla();
+
             }
             catch (Exception ex)
             {
@@ -97,10 +99,14 @@ namespace winform_app
             {
                 cboHoraDesde.Items.Add(i.ToString());
             }
-            for (int i = 23; i <= 0; i--)
+            for (int i = 23; i >= 0; i--)
             {
                 cboHoraHasta.Items.Add(i.ToString());
             }
+
+
+       
+
         }
         public void cargarCbosMinutos()
         {
@@ -118,6 +124,47 @@ namespace winform_app
         {
             frmAlta_Ingreso frmAltaIngr = new frmAlta_Ingreso(idEmpleado);
             frmAltaIngr.ShowDialog();
+            cargarGrilla();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+        }
+
+        private void btnEgreso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvIngresos.CurrentRow != null)
+                {
+                    Ingreso seleccionado;
+
+                    seleccionado = (Ingreso)dgvIngresos.CurrentRow.DataBoundItem;
+
+                    if (seleccionado.FechaSalida == DateTime.MinValue)
+                    {
+                        IngresoNegocio negocio = new IngresoNegocio();
+                        negocio.cargarEgreso(DateTime.Now, seleccionado.IdAsistencia);
+
+                        cargarGrilla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Alumno ya tiene cargado el egreso..");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una Asistencia para poder cargar el egreso");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Ocurrió un error");
+            }
+                    }
     }
 }

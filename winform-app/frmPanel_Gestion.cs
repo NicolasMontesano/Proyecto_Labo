@@ -18,27 +18,6 @@ namespace winform_app
         {
             InitializeComponent();
             this.emp = emp;
-
-            //if (emp.usuario.TipoUsuario == 0)
-            //{
-            //    MessageBox.Show("Error al ingresar");
-            //    this.Close();
-            //}
-            //if (emp.usuario.TipoUsuario != 1)
-            //{
-            //    tsmiEmpleados.Visible = false;
-            //}
-            //if (emp.usuario.TipoUsuario == 2)
-            //{
-            //    tsmiIngresos.Visible = false;
-            //    tsmiFacturas.Visible = false;
-            //}
-            //if (emp.usuario.TipoUsuario == 3)
-            //{
-            //    tsmiDisciplinas.Visible = false;
-            //    tsmiRutinas.Visible = false;
-            //    tsmiEjercicios.Visible = false;
-            //}
         }
 
         private void frmPanel_Gestion_Load(object sender, EventArgs e)

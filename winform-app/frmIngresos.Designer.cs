@@ -44,7 +44,7 @@
             this.cboHoraDesde = new System.Windows.Forms.ComboBox();
             this.lblHasta = new System.Windows.Forms.Label();
             this.btnNuevoIngreso = new System.Windows.Forms.Button();
-            this.btnDisciplinas = new System.Windows.Forms.Button();
+            this.btnEgreso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             this.panelHorario.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvIngresos
             // 
@@ -204,22 +205,23 @@
             this.btnNuevoIngreso.UseVisualStyleBackColor = true;
             this.btnNuevoIngreso.Click += new System.EventHandler(this.btnNuevoIngreso_Click);
             // 
-            // btnDisciplinas
+            // btnEgreso
             // 
-            this.btnDisciplinas.Location = new System.Drawing.Point(941, 386);
-            this.btnDisciplinas.Name = "btnDisciplinas";
-            this.btnDisciplinas.Size = new System.Drawing.Size(116, 23);
-            this.btnDisciplinas.TabIndex = 9;
-            this.btnDisciplinas.Text = "Disciplinas Alumno";
-            this.btnDisciplinas.UseVisualStyleBackColor = true;
+            this.btnEgreso.Location = new System.Drawing.Point(941, 386);
+            this.btnEgreso.Name = "btnEgreso";
+            this.btnEgreso.Size = new System.Drawing.Size(116, 23);
+            this.btnEgreso.TabIndex = 9;
+            this.btnEgreso.Text = "Cargar Egreso";
+            this.btnEgreso.UseVisualStyleBackColor = true;
+            this.btnEgreso.Click += new System.EventHandler(this.btnEgreso_Click);
             // 
             // frmIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1099, 484);
-            this.Controls.Add(this.btnDisciplinas);
+            this.ClientSize = new System.Drawing.Size(1099, 482);
+            this.Controls.Add(this.btnEgreso);
             this.Controls.Add(this.btnNuevoIngreso);
             this.Controls.Add(this.panelHorario);
             this.Controls.Add(this.dtpFiltro);
@@ -262,6 +264,6 @@
         private System.Windows.Forms.Label lblMinutos;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnNuevoIngreso;
-        private System.Windows.Forms.Button btnDisciplinas;
+        private System.Windows.Forms.Button btnEgreso;
     }
 }
