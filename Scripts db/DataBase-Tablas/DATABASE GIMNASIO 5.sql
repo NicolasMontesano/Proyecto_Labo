@@ -31,7 +31,6 @@ CREATE TABLE Alumnos (
     FechaNacimiento DATE NULL,
     DNI VARCHAR(8) UNIQUE NOT NULL,
     IdUsuario INT NOT NULL REFERENCES Usuarios(Id),
-    --Creditos INT NULL,
     Estado INT NOT NULL
 );
 GO
@@ -76,18 +75,17 @@ GO
 
 -- Crear la tabla Facturas
 CREATE TABLE Facturas (
-    IdFactura Int NOT NULL PRIMARY KEY,
-    IdAlumno Int NOT NULL REFERENCES Alumnos(IdAlumno),
+    IdFactura INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    IdAlumno INT NOT NULL REFERENCES Alumnos(IdAlumno),
     Monto MONEY NOT NULL,
     FechaDeEmision DATE NOT NULL,
     FechaDePago DATE NULL,
     FechaDeVencimiento DATE NOT NULL
 );
-GO
 
 -- Crear la tabla Asistencia
 CREATE TABLE Asistencia (
-    IdAsistencia Int NOT NULL PRIMARY KEY,
+    IdAsistencia Int identity(1,1) NOT NULL PRIMARY KEY,
     IdAlumno Int NOT NULL REFERENCES Alumnos(IdAlumno),
     IdEmpleado Int NOT NULL REFERENCES Empleados(IdEmpleado), -- hace referencia al recepcionista
     FechaEntrada DATETIME NOT NULL Default(getDate()),
