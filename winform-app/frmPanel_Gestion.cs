@@ -68,7 +68,8 @@ namespace winform_app
 
         private void vistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmFacturas frmFacturas = new frmFacturas();    
+            frmFacturas.ShowDialog();   
         }
 
         private void tsmiClientes_Click(object sender, EventArgs e)

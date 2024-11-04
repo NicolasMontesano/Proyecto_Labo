@@ -59,6 +59,12 @@
     <Compile Include="Agregar_Alumno.Designer.cs">
       <DependentUpon>Agregar_Alumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturas.Designer.cs">
+      <DependentUpon>frmFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_Alumno.resx">
       <DependentUpon>Agregar_Alumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturas.resx">
+      <DependentUpon>frmFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaAlumnos.resx">
       <DependentUpon>ListaAlumnos.cs</DependentUpon>

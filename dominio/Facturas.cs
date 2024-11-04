@@ -11,11 +11,11 @@ namespace dominio
 
         public int IdFactura { get; set; }
         public int IdAlumno { get; set; }
-        public float Monto { get; set; }
-        public DateTime FechaDeEmisiom {get; set; }
-        public DateTime FechaDePAgo { get; set; }   
-        public DateTime FechaDeVencimiento {  get; set; }   
-
+        public decimal Monto { get; set; }
+        public DateTime FechaDeEmision {get; set; }
+        public DateTime FechaDePago { get; set; }   
+        public DateTime FechaDeVencimiento {  get; set; }
+        public float MontoTotal { get; set; }
 
     }
 }
