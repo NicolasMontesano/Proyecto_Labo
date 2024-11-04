@@ -43,14 +43,28 @@ namespace winform_app
 
         private void btnTOTAL_Click(object sender, EventArgs e)
         {
+
             FacturasNegocio neg = new FacturasNegocio();
+            if (String.IsNullOrEmpty(txtMes.Text.Trim()))
+            {
+                MessageBox.Show("DEBE INGRESAR NUMERO DE MES");
+                return;
+            }
             if (!soloNumeros(txtMes.Text))
             {
                 MessageBox.Show("SOLO INGRESAR NUMERO DE MES");
                 return;
             }
+            int mes = Convert.ToInt32(txtMes.Text);
+
+            if(mes <= 0 || mes > 12)
+            {
+                MessageBox.Show("Número inválido");
+                return;
+            }
+
                 
-            lblTotalFacutrado.Text = neg.MontoTotal(Convert.ToInt32(txtMes.Text)).ToString();
+            lblTotalFacutrado.Text = "$" +  neg.MontoTotal(Convert.ToInt32(txtMes.Text)).ToString();
 
 
         }

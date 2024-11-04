@@ -52,10 +52,10 @@ namespace negocio
         }
 
 
-        public float MontoTotal(int mes) 
+        public decimal MontoTotal(int mes) 
         { 
             AccesoDatos datos = new AccesoDatos();
-            float Monto = 0;
+            decimal Monto = 0;
             
             try
             {
@@ -65,8 +65,8 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-
-                    Monto = (float)datos.Lector["TotalFacturado"];
+                    if(datos.Lector["TotalFacturado"] != DBNull.Value)
+                        Monto = (decimal)datos.Lector["TotalFacturado"];
 
                 }
                 return Monto;

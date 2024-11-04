@@ -40,6 +40,7 @@
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas.Location = new System.Drawing.Point(31, 67);
             this.dgvFacturas.Name = "dgvFacturas";
+            this.dgvFacturas.RowHeadersWidth = 45;
             this.dgvFacturas.Size = new System.Drawing.Size(657, 217);
             this.dgvFacturas.TabIndex = 0;
             // 
@@ -56,11 +57,11 @@
             // lblTotalFacutrado
             // 
             this.lblTotalFacutrado.AutoSize = true;
-            this.lblTotalFacutrado.Location = new System.Drawing.Point(352, 348);
+            this.lblTotalFacutrado.Location = new System.Drawing.Point(353, 348);
             this.lblTotalFacutrado.Name = "lblTotalFacutrado";
-            this.lblTotalFacutrado.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalFacutrado.Size = new System.Drawing.Size(13, 13);
             this.lblTotalFacutrado.TabIndex = 2;
-            this.lblTotalFacutrado.Text = "label1";
+            this.lblTotalFacutrado.Text = "$";
             // 
             // txtMes
             // 
